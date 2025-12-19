@@ -19,7 +19,7 @@ export default [
         ignores: ['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**']
     },
     {
-        files: ['*.ts', 'app/**/*.ts', 'src/**/*.ts'],
+        files: ['vite.config.ts', 'app/**/*.ts', 'src/**/*.ts'],
         languageOptions: {
             parser: tseslintParser,
             parserOptions: { project: './tsconfig.json' }
@@ -82,5 +82,8 @@ export default [
             'unicorn/filename-case': 'off',
             'unicorn/no-null': 'off'
         }
+    },
+    {
+        files: ['eslint.config.ts']
     }
 ];
