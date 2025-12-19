@@ -16,10 +16,10 @@ import unicorn from 'eslint-plugin-unicorn';
 // Exposures - Configuration.
 export default [
     {
-        ignores: ['dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'stats/**']
+        ignores: ['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**']
     },
     {
-        files: ['vite.config.ts', 'src/**/*.ts'],
+        files: ['*.ts', 'app/**/*.ts', 'src/**/*.ts'],
         languageOptions: {
             parser: tseslintParser,
             parserOptions: { project: './tsconfig.json' }
