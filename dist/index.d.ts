@@ -28,6 +28,9 @@ declare const _default: ({
             node: {
                 extensions: string[];
             };
+            typescript: {
+                project: string;
+            };
         };
     };
     rules: any;

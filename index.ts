@@ -26,7 +26,12 @@ export default [
             security
         },
         settings: {
-            'import/resolver': { node: { extensions: ['.js', '.mjs', '.ts'] } }
+            'import/resolver': {
+                node: { extensions: ['.js', '.mjs', '.ts'] },
+                typescript: {
+                    project: './tsconfig.json' // Teach eslint-plugin-import about TS aliases.
+                }
+            }
         },
         rules: {
             ...tseslint.configs.recommended.rules,
