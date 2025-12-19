@@ -1,7 +1,7 @@
 {
     "name": "@datapos/eslint-config-datapos",
     "description": "Common ESLint configuration used in Data Positioning projects.",
-    "version": "1.0.22",
+    "version": "1.0.23",
     "private": false,
     "type": "module",
     "main": "dist/index.js",
@@ -33,15 +33,16 @@
         "typescript": "^5.9.3"
     },
     "scripts": {
-        "audit": "node -e \"import('@datapos/datapos-development').then(m => m.auditDependencies())\"",
+        "audit": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.auditDependencies())\"",
         "build": "tsc",
         "check": "node -e \"import('@datapos/datapos-development').then(m => m.checkDependencies())\"",
-        "document": "node -e \"import('@datapos/datapos-development').then(m => m.documentDependencies(['Apache-2.0', 'MIT', 'LGPL-3.0-only'], false))\"",
+        "document": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.documentDependencies(['Apache-2.0', 'MIT', 'LGPL-3.0-only'], false))\"",
         "format": "node -e \"import('@datapos/datapos-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@datapos/datapos-development').then(m => m.lintCode())\"",
-        "release": "npm run build && npm run sync && npm publish --access public",
+        "release": "op run --env-file=.env -- npm run build && npm run sync && npm publish --access public",
         "sync": "node -e \"import('@datapos/datapos-development').then(m => m.syncProjectWithGitHub())\"",
-        "test": "node -e \"import('@datapos/datapos-development').then(m => m.testProject())\"",
+        "test:e2e": "echo \"❌ 'test:e2e' command not implemented.\"",
+        "test:unit": "echo \"❌ 'test:unit' command not implemented.\"",
         "update": "node -e \"import('@datapos/datapos-development').then(m => m.updateDataPosDependencies(['development']))\""
     }
 }
