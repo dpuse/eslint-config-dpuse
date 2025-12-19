@@ -2,6 +2,6 @@
  * ESLint configuration.
  */
 
-import datapos from './index.ts';
+import datapos from './src/index.ts';
 
 export default [...datapos];

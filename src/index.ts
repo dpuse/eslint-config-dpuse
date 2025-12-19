@@ -2,13 +2,16 @@
  * ESLint configuration.
  */
 
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 // Dependencies - Vendor.
+import importPlugin from 'eslint-plugin-import';
+import security from 'eslint-plugin-security';
+import sonarjs from 'eslint-plugin-sonarjs';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tseslintParser from '@typescript-eslint/parser';
-import importPlugin from 'eslint-plugin-import';
 import unicorn from 'eslint-plugin-unicorn';
-import sonarjs from 'eslint-plugin-sonarjs';
-import security from 'eslint-plugin-security';
 
 // Exposures - Configuration.
 export default [
@@ -17,7 +20,10 @@ export default [
     },
     {
         files: ['vite.config.ts', 'src/**/*.ts'],
-        languageOptions: { parser: tseslintParser, parserOptions: { project: './tsconfig.json' } },
+        languageOptions: {
+            parser: tseslintParser,
+            parserOptions: { project: './tsconfig.json' }
+        },
         plugins: {
             '@typescript-eslint': tseslint,
             import: importPlugin,
@@ -57,7 +63,14 @@ export default [
             '@typescript-eslint/strict-boolean-expressions': 'warn',
 
             'import/no-duplicates': 'warn',
-            'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
+            'sort-imports': [
+                'warn',
+                {
+                    allowSeparatedGroups: true,
+                    ignoreCase: true,
+                    memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple']
+                }
+            ],
 
             'sonarjs/no-commented-code': 'warn',
             'sonarjs/no-dead-store': 'warn',
@@ -69,8 +82,5 @@ export default [
             'unicorn/filename-case': 'off',
             'unicorn/no-null': 'off'
         }
-    },
-    {
-        files: ['eslint.config.ts']
     }
 ];
