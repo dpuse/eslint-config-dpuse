@@ -20,7 +20,6 @@ declare const _default: ({
         '@typescript-eslint': any;
         import: any;
         unicorn: any;
-        sonarjs: any;
         security: any;
     };
     settings: {

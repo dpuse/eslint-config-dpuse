@@ -8,7 +8,7 @@
 // Dependencies - Vendor.
 import importPlugin from 'eslint-plugin-import';
 import security from 'eslint-plugin-security';
-import sonarjs from 'eslint-plugin-sonarjs';
+// import sonarjs from 'eslint-plugin-sonarjs';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tseslintParser from '@typescript-eslint/parser';
 import unicorn from 'eslint-plugin-unicorn';
@@ -28,7 +28,7 @@ export default [
             '@typescript-eslint': tseslint,
             import: importPlugin,
             unicorn,
-            sonarjs,
+            // sonarjs,
             security
         },
         settings: {
@@ -46,7 +46,7 @@ export default [
             ...tseslint.configs['stylistic-type-checked'].rules,
             ...importPlugin.flatConfigs.recommended.rules, // Import plugin recommended.
             ...unicorn.configs.recommended.rules, // Unicorn plugin recommended.
-            ...sonarjs.configs.recommended.rules, // SonarJS plugin recommended.
+            // ...sonarjs.configs.recommended.rules, // SonarJS plugin recommended.
             ...security.configs.recommended.rules, // Security plugin recommended.
 
             // Overrides and adjustments.
@@ -72,10 +72,10 @@ export default [
                 }
             ],
 
-            'sonarjs/no-commented-code': 'warn',
-            'sonarjs/no-dead-store': 'warn',
-            'sonarjs/no-unused-vars': 'warn',
-            'sonarjs/todo-tag': 'warn',
+            // 'sonarjs/no-commented-code': 'warn',
+            // 'sonarjs/no-dead-store': 'warn',
+            // 'sonarjs/no-unused-vars': 'warn',
+            // 'sonarjs/todo-tag': 'warn',
 
             'unicorn/prefer-switch': 'warn',
             'unicorn/switch-case-braces': ['warn', 'avoid'],
