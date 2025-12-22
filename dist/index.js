@@ -1,8 +1,8 @@
 /**
  * ESLint configuration.
  */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable unicorn/no-useless-fallback-in-spread */
 /** Vendor dependencies. */
 import importPlugin from 'eslint-plugin-import';
 import security from 'eslint-plugin-security';
