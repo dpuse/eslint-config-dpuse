@@ -13,7 +13,7 @@ import unicorn from 'eslint-plugin-unicorn';
 /** Configuration export. */
 export default [
     {
-        ignores: ['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**']
+        ignores: ['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'docs/**', 'dist/**', 'licenses/**']
     },
     {
         files: ['vite.config.ts', 'app/**/*.ts', 'src/**/*.ts'],
