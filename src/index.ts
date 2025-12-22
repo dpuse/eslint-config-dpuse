@@ -5,15 +5,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-// Dependencies - Vendor.
+/** Vendor dependencies. */
 import importPlugin from 'eslint-plugin-import';
 import security from 'eslint-plugin-security';
-// import sonarjs from 'eslint-plugin-sonarjs';
+import sonarjs from 'eslint-plugin-sonarjs';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tseslintParser from '@typescript-eslint/parser';
 import unicorn from 'eslint-plugin-unicorn';
 
-// Exposures - Configuration.
+/** Configuration export. */
 export default [
     {
         ignores: ['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**']
@@ -28,7 +28,7 @@ export default [
             '@typescript-eslint': tseslint,
             import: importPlugin,
             unicorn,
-            // sonarjs,
+            sonarjs,
             security
         },
         settings: {
@@ -44,12 +44,10 @@ export default [
             ...tseslint.configs['recommended-type-checked'].rules,
             ...tseslint.configs['strict-type-checked'].rules,
             ...tseslint.configs['stylistic-type-checked'].rules,
-            ...importPlugin.flatConfigs.recommended.rules, // Import plugin recommended.
-            ...unicorn.configs.recommended.rules, // Unicorn plugin recommended.
-            // ...sonarjs.configs.recommended.rules, // SonarJS plugin recommended.
-            ...security.configs.recommended.rules, // Security plugin recommended.
-
-            // Overrides and adjustments.
+            ...importPlugin.flatConfigs.recommended.rules, // Import plugin recommended rules.
+            ...unicorn.configs.recommended.rules, // Unicorn plugin recommended rules.
+            ...sonarjs.configs.recommended.rules, // SonarJS plugin recommended rules.
+            ...security.configs.recommended.rules, // Security plugin recommended rules.
 
             'no-empty': 'warn',
             'prefer-const': 'warn',
@@ -72,10 +70,10 @@ export default [
                 }
             ],
 
-            // 'sonarjs/no-commented-code': 'warn',
-            // 'sonarjs/no-dead-store': 'warn',
-            // 'sonarjs/no-unused-vars': 'warn',
-            // 'sonarjs/todo-tag': 'warn',
+            'sonarjs/no-commented-code': 'warn',
+            'sonarjs/no-dead-store': 'warn',
+            'sonarjs/no-unused-vars': 'warn',
+            'sonarjs/todo-tag': 'warn',
 
             'unicorn/prefer-switch': 'warn',
             'unicorn/switch-case-braces': ['warn', 'avoid'],
