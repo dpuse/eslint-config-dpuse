@@ -37,10 +37,10 @@ export default [
             }
         },
         rules: {
-            ...tseslint.configs.recommended.rules,
-            ...tseslint.configs['recommended-type-checked'].rules,
-            ...tseslint.configs['strict-type-checked'].rules,
-            ...tseslint.configs['stylistic-type-checked'].rules,
+            ...(tseslint.configs['recommended']?.rules ?? {}),
+            ...(tseslint.configs['recommended-type-checked']?.rules ?? {}),
+            ...(tseslint.configs['strict-type-checked']?.rules ?? {}),
+            ...(tseslint.configs['stylistic-type-checked']?.rules ?? {}),
             ...importPlugin.flatConfigs.recommended.rules, // Import plugin recommended rules.
             ...unicorn.configs.recommended.rules, // Unicorn plugin recommended rules.
             ...sonarjs.configs.recommended.rules, // SonarJS plugin recommended rules.
@@ -77,3 +77,4 @@ export default [
         files: ['eslint.config.ts']
     }
 ];
+//# sourceMappingURL=index.js.map
