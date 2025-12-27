@@ -75,10 +75,11 @@ export default [
             'sonarjs/no-unused-vars': 'warn',
             'sonarjs/todo-tag': 'warn',
 
-            'unicorn/prefer-switch': 'warn',
-            'unicorn/switch-case-braces': ['warn', 'avoid'],
             'unicorn/filename-case': 'off',
-            'unicorn/no-null': 'off'
+            'unicorn/no-null': 'off',
+            'unicorn/number-literal-case': ['error', { hexadecimalValue: 'lowercase' }],
+            'unicorn/prefer-switch': 'warn',
+            'unicorn/switch-case-braces': ['warn', 'avoid']
         }
     },
     {

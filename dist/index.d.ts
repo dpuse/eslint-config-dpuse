@@ -98,10 +98,13 @@ declare const _default: ({
         'sonarjs/no-dead-store': string;
         'sonarjs/no-unused-vars': string;
         'sonarjs/todo-tag': string;
-        'unicorn/prefer-switch': string;
-        'unicorn/switch-case-braces': string[];
         'unicorn/filename-case': string;
         'unicorn/no-null': string;
+        'unicorn/number-literal-case': (string | {
+            hexadecimalValue: string;
+        })[];
+        'unicorn/prefer-switch': string;
+        'unicorn/switch-case-braces': string[];
     };
     ignores?: never;
 } | {
