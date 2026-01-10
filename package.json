@@ -1,7 +1,7 @@
 {
     "name": "@datapos/eslint-config-datapos",
     "description": "Common ESLint configuration used in Data Positioning projects.",
-    "version": "1.0.36",
+    "version": "1.0.37",
     "private": false,
     "type": "module",
     "main": "dist/index.js",

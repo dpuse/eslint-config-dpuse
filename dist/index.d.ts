@@ -94,6 +94,7 @@ declare const _default: ({
             ignoreCase: boolean;
             memberSyntaxSortOrder: string[];
         })[];
+        'security/detect-object-injection': string[];
         'sonarjs/no-commented-code': string;
         'sonarjs/no-dead-store': string;
         'sonarjs/no-unused-vars': string;
