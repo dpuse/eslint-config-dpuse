@@ -63,7 +63,8 @@ export default [
                     memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple']
                 }
             ],
-            'security/detect-object-injection': ['off'],
+            'security/detect-object-injection': ['off'], // TypeScript's type system provides safety. Ensure no user-supplied object keys without validation.
+            'sonarjs/cognitive-complexity': ['error', 20],
             'sonarjs/no-commented-code': 'warn',
             'sonarjs/no-dead-store': 'warn',
             'sonarjs/no-unused-vars': 'warn',

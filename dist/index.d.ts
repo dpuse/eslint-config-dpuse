@@ -95,6 +95,7 @@ declare const _default: ({
             memberSyntaxSortOrder: string[];
         })[];
         'security/detect-object-injection': string[];
+        'sonarjs/cognitive-complexity': (string | number)[];
         'sonarjs/no-commented-code': string;
         'sonarjs/no-dead-store': string;
         'sonarjs/no-unused-vars': string;
