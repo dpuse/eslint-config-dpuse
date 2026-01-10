@@ -19,7 +19,7 @@ export default [
         ignores: ['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'docs/**', 'dist/**', 'licenses/**']
     },
     {
-        files: ['vite.config.ts', 'app/**/*.ts', 'src/**/*.ts'],
+        files: ['vite.config.ts', 'app/**/*.ts', 'src/**/*.ts', 'tests/**/*.ts'],
         languageOptions: {
             parser: tseslintParser,
             parserOptions: { project: './tsconfig.json' }
