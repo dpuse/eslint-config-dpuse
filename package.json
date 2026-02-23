@@ -1,7 +1,7 @@
 {
-    "name": "@datapos/eslint-config-datapos",
-    "description": "Common ESLint configuration used in Data Positioning projects.",
-    "version": "1.0.46",
+    "name": "@dpuse/eslint-config-dpuse",
+    "description": "Common ESLint configuration used in DPU projects.",
+    "version": "1.0.47",
     "private": false,
     "type": "module",
     "main": "dist/index.js",

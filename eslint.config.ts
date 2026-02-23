@@ -3,7 +3,7 @@
  */
 
 /** Framework dependencies. */
-import datapos from './src/index.ts';
+import dpuse from './src/index.ts';
 
 /** Configuration export. */
-export default [...datapos];
+export default [...dpuse];
