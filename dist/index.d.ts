@@ -56,11 +56,11 @@ declare const _default: ({
         };
         unicorn: import("@eslint/core", { with: { "resolution-mode": "require" } }).Plugin & {
             configs: {
-                recommended: import("eslint").Linter.FlatConfig;
-                unopinionated: import("eslint").Linter.FlatConfig;
-                all: import("eslint").Linter.FlatConfig;
-                "flat/all": import("eslint").Linter.FlatConfig;
-                "flat/recommended": import("eslint").Linter.FlatConfig;
+                recommended: import("eslint").Linter.Config;
+                unopinionated: import("eslint").Linter.Config;
+                all: import("eslint").Linter.Config;
+                "flat/all": import("eslint").Linter.Config;
+                "flat/recommended": import("eslint").Linter.Config;
             };
         };
         sonarjs: typeof sonarjs;
