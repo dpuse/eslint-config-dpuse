@@ -15,7 +15,7 @@ Common ESLint configuration used in most DPUse projects.
 
 The OWASP Dependency Check Report identifies known vulnerabilities in project dependencies. It is generated automatically on each release using the npm package `owasp-dependency-check`. We also rely on GitHub Dependabot to continuously check for vulnerabilities across all dependencies.
 
-[View the OWASP Dependency Check Report](https://dpuse.github.io/eslint-config-dpuse/dependency-check-report.html)
+[View the OWASP Dependency Check Report](https://dpuse.github.io/eslint-config-dpuse/dependency-check-reports/dependency-check-report.html)
 
 ### Dependency Licenses
 
