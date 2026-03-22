@@ -1,12 +1,13 @@
 # Data Positioning ESLint Configuration
 
+[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse.svg)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 <span><!-- OWASP_BADGES_START -->
 [![OWASP](https://img.shields.io/badge/OWASP-passed-4CAF50)](https://data-positioning.github.io/eslint-config-dpuse/dependency-check-reports/dependency-check-report.html)
 
 <!-- OWASP_BADGES_END --></span>
 
-[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse.svg)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+Common ESLint configuration used in most DPUse projects.
 
 ## Reports & Compliance
 
