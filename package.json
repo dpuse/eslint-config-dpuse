@@ -1,7 +1,7 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
     "description": "Common ESLint configuration used in most DPUse projects.",
-    "version": "1.0.54",
+    "version": "1.0.55",
     "private": false,
     "type": "module",
     "main": "dist/index.js",
