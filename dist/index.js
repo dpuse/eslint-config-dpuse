@@ -1,10 +1,11 @@
 /**
  * ESLint configuration.
  */
+// TODO: Install @eslint-community/eslint-plugin-eslint-comments, eslint-plugin-regexp here as done in 'dpuse-app'.
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable unicorn/no-useless-fallback-in-spread */
 /** Vendor dependencies. */
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 import security from 'eslint-plugin-security';
 import sonarjs from 'eslint-plugin-sonarjs';
 import tseslint from '@typescript-eslint/eslint-plugin';
