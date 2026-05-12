@@ -25,7 +25,7 @@ declare const _default: ({
             meta: import("@typescript-eslint/utils/ts-eslint").FlatConfig.PluginMeta;
             rules: typeof import("@typescript-eslint/eslint-plugin/use-at-your-own-risk/rules");
         };
-        import: {
+        'import-x': {
             meta: {
                 name: string;
                 version: string;
@@ -262,7 +262,7 @@ declare const _default: ({
             allowNumber: boolean;
         })[];
         '@typescript-eslint/strict-boolean-expressions': string;
-        'import/no-duplicates': string;
+        'import-x/no-duplicates': string;
         'sort-imports': (string | {
             allowSeparatedGroups: boolean;
             ignoreCase: boolean;
@@ -288,7 +288,6 @@ declare const _default: ({
         'import-x/export'?: "error";
         'import-x/no-named-as-default'?: "warn";
         'import-x/no-named-as-default-member'?: "warn";
-        'import-x/no-duplicates'?: "warn";
     };
     ignores?: never;
 } | {

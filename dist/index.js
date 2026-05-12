@@ -24,7 +24,7 @@ export default [
         },
         plugins: {
             '@typescript-eslint': tseslint,
-            import: importPlugin,
+            'import-x': importPlugin,
             unicorn,
             sonarjs,
             security
@@ -55,7 +55,7 @@ export default [
             '@typescript-eslint/no-unused-vars': 'warn',
             '@typescript-eslint/restrict-template-expressions': ['warn', { allowNumber: true }],
             '@typescript-eslint/strict-boolean-expressions': 'warn',
-            'import/no-duplicates': 'warn',
+            'import-x/no-duplicates': 'warn',
             'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
             'security/detect-object-injection': ['off'], // TypeScript's type system provides safety. However, must ensure no user-supplied object keys without validation.
             'sonarjs/cognitive-complexity': ['error', 20],
