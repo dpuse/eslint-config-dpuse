@@ -1,7 +1,7 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
     "description": "Common ESLint configuration used in most DPUse projects.",
-    "version": "1.0.63",
+    "version": "1.0.64",
     "private": false,
     "type": "module",
     "main": "dist/index.js",
@@ -51,7 +51,7 @@
         "document": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.documentDependencies(['Apache-2.0', 'ISC', 'MIT', 'LGPL-3.0-only', 'n/a'], false))\"",
         "format": "node -e \"import('@datapos/datapos-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@datapos/datapos-development').then(m => m.lintCode())\"",
-        "release": "npm run build && npm run sync && npm publish --access public",
+        "release": "op run --env-file=.env -- npm run build && npm run sync && npm publish --access public",
         "sync": "node -e \"import('@datapos/datapos-development').then(m => m.syncProjectWithGitHub())\"",
         "test:e2e": "echo \"❌ 'test:e2e' command not implemented.\"",
         "test:unit": "echo \"❌ 'test:unit' command not implemented.\"",
