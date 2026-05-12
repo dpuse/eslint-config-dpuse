@@ -1,7 +1,7 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
     "description": "Common ESLint configuration used in most DPUse projects.",
-    "version": "1.0.60",
+    "version": "1.0.61",
     "private": false,
     "type": "module",
     "main": "dist/index.js",
@@ -48,7 +48,7 @@
         "audit": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.auditDependencies())\"",
         "build": "tsc",
         "check": "node -e \"import('@datapos/datapos-development').then(m => m.checkDependencies())\"",
-        "document": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.documentDependencies(['Apache-2.0', 'ISC', 'MIT', 'LGPL-3.0-only'], false))\"",
+        "document": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.documentDependencies(['Apache-2.0', 'ISC', 'MIT', 'LGPL-3.0-only', 'n/a'], false))\"",
         "format": "node -e \"import('@datapos/datapos-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@datapos/datapos-development').then(m => m.lintCode())\"",
         "release": "npm run build && npm run sync && npm publish --access public",
