@@ -241,7 +241,7 @@ declare const _default: ({
         security: typeof security;
     };
     settings: {
-        'import/resolver': {
+        'import-x/resolver': {
             node: {
                 extensions: string[];
             };

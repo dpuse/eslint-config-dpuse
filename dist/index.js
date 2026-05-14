@@ -30,10 +30,10 @@ export default [
             security
         },
         settings: {
-            'import/resolver': {
+            'import-x/resolver': {
                 node: { extensions: ['.js', '.mjs', '.ts'] },
                 typescript: {
-                    project: './tsconfig.json' // Teach eslint-plugin-import about TS aliases.
+                    project: './tsconfig.json'
                 }
             }
         },
