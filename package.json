@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.76",
+    "version": "1.0.77",
     "private": false,
     "description": "Common ESLint configuration used in most DPUse projects.",
     "license": "MIT",
@@ -25,7 +25,7 @@
         "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentDependencies('Apache-2.0;BSD-2-Clause;BSD-3-Clause;BlueOak-1.0.0;CC-BY-4.0;ISC;LGPL-3.0-only;MIT'))\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
-        "release": "op run --env-file=.env -- npm run build && npm run sync && npm publish --access public",
+        "release": "npm run build && npm run sync && op run --env-file=.env -- npm publish --access public",
         "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
         "test:e2e": "echo \"❌ 'test:e2e' command not implemented.\"",
         "test:unit": "echo \"❌ 'test:unit' command not implemented.\""
