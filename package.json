@@ -1,60 +1,57 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "description": "Common ESLint configuration used in most DPUse projects.",
-    "version": "1.0.71",
+    "version": "1.0.74",
     "private": false,
+    "description": "Common ESLint configuration used in most DPUse projects.",
+    "license": "MIT",
+    "author": "Jonathan Terrell <terrell.jm@gmail.com>",
     "type": "module",
+    "sideEffects": false,
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "prettier": "@datapos/datapos-development/prettierrc",
-    "peerDependencies": {
-        "@types/eslint-plugin-security": "^3.0.1",
-        "@typescript-eslint/eslint-plugin": "^8.60.0",
-        "@typescript-eslint/parser": "^8.60.0",
-        "@typescript-eslint/utils": "^8.60.0",
-        "eslint": "^10.4.0",
-        "eslint-import-resolver-typescript": "^4.4.4",
-        "eslint-plugin-import-x": "^4.16.2",
-        "eslint-plugin-prettier": "^5.5.5",
-        "eslint-plugin-security": "^4.0.0",
-        "eslint-plugin-sonarjs": "^4.0.3",
-        "eslint-plugin-unicorn": "^64.0.0"
+    "engines": {
+        "node": ">=22",
+        "npm": ">=11"
     },
-    "devDependencies": {
-        "@datapos/datapos-development": "^0.3.448",
-        "@types/eslint-plugin-security": "^3.0.1",
-        "@typescript-eslint/eslint-plugin": "^8.60.0",
-        "@typescript-eslint/parser": "^8.60.0",
-        "@typescript-eslint/utils": "^8.60.0",
-        "eslint": "^10.4.0",
-        "eslint-import-resolver-typescript": "^4.4.4",
-        "eslint-plugin-import-x": "^4.16.2",
-        "eslint-plugin-prettier": "^5.5.5",
-        "eslint-plugin-security": "^4.0.0",
-        "eslint-plugin-sonarjs": "^4.0.3",
-        "eslint-plugin-unicorn": "^64.0.0",
-        "jiti": "^2.7.0",
-        "license-downloader": "^2.0.0",
-        "license-report": "^6.8.2",
-        "license-report-check": "^1.0.0",
-        "license-report-recursive": "^6.8.4",
-        "nanoid": "^5.1.11",
-        "npm-check-updates": "^22.2.1",
-        "owasp-dependency-check": "^1.0.1",
-        "prettier": "^3.8.3",
-        "typescript": "^6.0.3"
+    "prettier": "@dpuse/dpuse-development/prettierrc",
+    "allowScripts": {
+        "unrs-resolver@1.11.1": true,
+        "unrs-resolver@1.12.2": true
     },
     "scripts": {
-        "audit": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.auditDependencies())\"",
-        "build": "tsc",
-        "check": "node -e \"import('@datapos/datapos-development').then(m => m.checkDependencies())\"",
-        "document": "op run --env-file=.env -- node -e \"import('@datapos/datapos-development').then(m => m.documentDependencies(['Apache-2.0', 'ISC', 'MIT', 'LGPL-3.0-only', 'n/a'], false))\"",
-        "format": "node -e \"import('@datapos/datapos-development').then(m => m.formatCode())\"",
-        "lint": "node -e \"import('@datapos/datapos-development').then(m => m.lintCode())\"",
+        "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
+        "build": "tsc -p tsconfig.build.json",
+        "check": "node -e \"import('@dpuse/dpuse-development').then(m => m.checkConfigFiles())\" && node -e \"import('@dpuse/dpuse-development').then(m => m.checkDependencies())\"",
+        "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentDependencies('Apache-2.0;BSD-2-Clause;BSD-3-Clause;BlueOak-1.0.0;CC-BY-4.0;ISC;LGPL-3.0-only;MIT'))\"",
+        "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
+        "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
         "release": "op run --env-file=.env -- npm run build && npm run sync && npm publish --access public",
-        "sync": "node -e \"import('@datapos/datapos-development').then(m => m.syncProjectWithGitHub())\"",
+        "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
         "test:e2e": "echo \"❌ 'test:e2e' command not implemented.\"",
-        "test:unit": "echo \"❌ 'test:unit' command not implemented.\"",
-        "update": "node -e \"import('@datapos/datapos-development').then(m => m.updateDataPosDependencies(['development']))\""
+        "test:unit": "echo \"❌ 'test:unit' command not implemented.\""
+    },
+    "peerDependencies": {
+        "eslint": "^10.6.0"
+    },
+    "dependencies": {
+        "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-import-resolver-typescript": "^4.4.5",
+        "eslint-plugin-import-x": "^4.17.1",
+        "eslint-plugin-regexp": "^3.1.1",
+        "eslint-plugin-security": "^4.0.1",
+        "eslint-plugin-sonarjs": "^4.1.0",
+        "eslint-plugin-unicorn": "^69.0.0",
+        "typescript-eslint": "^8.62.1"
+    },
+    "devDependencies": {
+        "@dpuse/dpuse-development": "^0.3.630",
+        "@types/eslint-plugin-security": "^3.0.1",
+        "@types/node": "^26.1.0",
+        "eslint": "^10.6.0",
+        "jiti": "^2.7.0",
+        "prettier": "^3.9.4",
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.62.1"
     }
 }

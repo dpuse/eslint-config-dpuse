@@ -1,9 +1,6 @@
-/**
- * ESLint configuration.
- */
+// ── Local (DPUse ESLint) Framework
+import { dpuseESLintConfig } from '@/index.ts';
 
-/** Framework dependencies. */
-import dpuse from './src/index.ts';
+// ── DPUse ESLint Configuration ───────────────────────────────────────────────────────────────────────────────────────
 
-/** Configuration export. */
-export default [...dpuse];
+export default dpuseESLintConfig({ tsconfigPath: './tsconfig.json', tsconfigRootDir: import.meta.dirname });
