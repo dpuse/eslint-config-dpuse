@@ -1,6 +1,9 @@
 // ── Local (DPUse ESLint) Framework
-import { dpuseESLintConfig } from '@/index.ts';
+import { dpuseESLintConfig } from './src/index.ts';
 
 // ── DPUse ESLint Configuration ───────────────────────────────────────────────────────────────────────────────────────
 
-export default dpuseESLintConfig({ tsconfigPath: './tsconfig.json', tsconfigRootDir: import.meta.dirname });
+/** @type {import('eslint').Linter.Config[]} */
+const config = dpuseESLintConfig({ tsconfigPath: './tsconfig.json', tsconfigRootDir: import.meta.dirname });
+
+export default config;
