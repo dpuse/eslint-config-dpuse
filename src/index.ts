@@ -70,6 +70,7 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
 
         // Rule overrides.
         {
+            files,
             rules: {
                 'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
 

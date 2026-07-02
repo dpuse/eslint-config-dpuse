@@ -1,3 +1,5 @@
+// ── External Dependencies & Registrations
+import type { Linter } from 'eslint';
 import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
 import { configs as pluginRegexpConfigs } from 'eslint-plugin-regexp';
@@ -7,26 +9,28 @@ import pluginUnicorn from 'eslint-plugin-unicorn';
 import skipFormatting from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
-/** Configuration export. */
-export function dpuseESLintConfig(options) {
-    const { files = ['eslint.config.*', 'src/**/*.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath, tsconfigRootDir } = options;
-    return defineConfig(
+
+// ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
+
+export default defineConfig(
     // Linting scope, strict TypeScript type-checking, and module resolver.
     {
-        files,
+        files: ['eslint.config.*', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'],
         extends: [...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked],
         languageOptions: {
-            parserOptions: { project: tsconfigPath, tsconfigRootDir }
+            parserOptions: { project: './tsconfig.json' }
         },
         settings: {
-            'import-x/core-modules': importCoreModules,
+            'import-x/core-modules': ['cloudflare:workers'],
             'import-x/resolver': {
-                typescript: { project: [tsconfigPath] }
+                typescript: { project: ['./tsconfig.json'] }
             }
         }
-    }, 
+    },
+
     // Ignores.
-    globalIgnores(['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**', ...ignores]), 
+    globalIgnores(['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**']),
+
     // Plugin configurations.
     {
         // '@eslint-community/eslint-comments' only ships a legacy config; manually convert to flat format.
@@ -38,25 +42,34 @@ export function dpuseESLintConfig(options) {
             '@eslint-community/eslint-comments/no-unlimited-disable': 'error',
             '@eslint-community/eslint-comments/no-unused-enable': 'error'
         }
-    }, pluginImportFlatConfigs.recommended, pluginRegexpConfigs['flat/recommended'], pluginSecurity.configs.recommended, pluginSonarJS.configs.recommended, pluginUnicorn.configs.recommended, skipFormatting, 
+    },
+    pluginImportFlatConfigs.recommended,
+    pluginRegexpConfigs['flat/recommended'],
+    pluginSecurity.configs.recommended,
+    (pluginSonarJS.configs?.['recommended'] ?? {}) as Linter.Config,
+    pluginUnicorn.configs.recommended,
+    skipFormatting,
+
     // Rule overrides.
     {
-        files,
         rules: {
             'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
+
             '@typescript-eslint/no-unused-vars': 'warn',
+
             '@eslint-community/eslint-comments/require-description': 'warn',
+
             'security/detect-object-injection': 'off',
+
             'sonarjs/no-commented-code': 'warn',
             'sonarjs/no-dead-store': 'warn',
             'sonarjs/no-unused-vars': 'warn',
             'sonarjs/todo-tag': 'warn',
-            'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
+
+            'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true }, ignore: ['updateDPUseDependencies'] }],
             'unicorn/no-null': 'off',
-            'unicorn/switch-case-braces': ['warn', 'avoid'],
-            ...rules
+            'unicorn/no-process-exit': 'off', // This package only contains scripts that are run as package.json scripts.
+            'unicorn/switch-case-braces': ['warn', 'avoid']
         }
-    });
-}
-export default dpuseESLintConfig;
-//# sourceMappingURL=index.js.map
+    }
+);
