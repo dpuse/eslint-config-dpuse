@@ -1,38 +1,26 @@
 {
     "compilerOptions": {
-        "declaration": true,
-        "declarationMap": true,
+        "allowJs": true,
+        "allowImportingTsExtensions": true,
         "esModuleInterop": true,
         "exactOptionalPropertyTypes": true,
-        "forceConsistentCasingInFileNames": true,
         "incremental": true,
         "lib": ["ESNext"],
         "module": "NodeNext",
         "moduleDetection": "force",
-        "moduleResolution": "nodenext",
-        "noImplicitAny": true,
+        "moduleResolution": "NodeNext",
+        "noEmit": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
         "noUncheckedIndexedAccess": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "outDir": "dist",
+        "paths": { "@/*": ["./src/*"] },
         "resolveJsonModule": true,
         "skipLibCheck": true,
-        "sourceMap": true,
         "strict": true,
-        "strictNullChecks": true,
         "target": "ESNext",
         "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo",
-        "useDefineForClassFields": true,
-        "verbatimModuleSyntax": true,
-        "noEmit": true,
-        "allowJs": true,
-        "allowImportingTsExtensions": true,
         "types": ["node"],
-        "paths": {
-            "@/*": ["./src/*"]
-        }
+        "verbatimModuleSyntax": true
     },
-    "include": ["eslint.config.*", "src/**/*.ts"]
+    "include": ["eslint.config.js", "src/**/*.ts"]
 }
