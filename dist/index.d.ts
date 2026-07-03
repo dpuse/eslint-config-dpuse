@@ -14,7 +14,6 @@ export interface DPUseESLintConfigOptions {
     /** The consuming project's root directory, e.g. `import.meta.dirname` from its own `eslint.config.ts`. */
     tsconfigRootDir: string;
 }
-/** Configuration export. */
 export declare function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Config[];
 export default dpuseESLintConfig;
 //# sourceMappingURL=index.d.ts.map

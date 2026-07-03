@@ -10,6 +10,8 @@ import skipFormatting from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
+// ── Types ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
 /** Options accepted by the shared DPUse ESLint configuration factory. */
 export interface DPUseESLintConfigOptions {
     /** Glob patterns for the files to type-check. Defaults to the common DPUse project layout. */
@@ -26,7 +28,8 @@ export interface DPUseESLintConfigOptions {
     tsconfigRootDir: string;
 }
 
-/** Configuration export. */
+// ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
+
 export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Config[] {
     const { files = ['eslint.config.*', 'src/**/*.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath, tsconfigRootDir } = options;
 

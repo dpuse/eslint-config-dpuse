@@ -7,7 +7,7 @@ import pluginUnicorn from 'eslint-plugin-unicorn';
 import skipFormatting from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
-/** Configuration export. */
+// ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 export function dpuseESLintConfig(options) {
     const { files = ['eslint.config.*', 'src/**/*.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath, tsconfigRootDir } = options;
     return defineConfig(
