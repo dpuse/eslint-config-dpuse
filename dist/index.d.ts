@@ -5,14 +5,14 @@ export interface DPUseESLintConfigOptions {
     files?: string[];
     /** Extra glob patterns to ignore, on top of the standard DPUse build/report directories. */
     ignores?: string[];
-    /** Module specifiers that `import-x` should treat as resolvable core modules (e.g. `cloudflare:workers`). */
+    /** Module specifiers that `import-x` should treat as resolvable core modules. Defaults to `cloudflare:workers`, used by all DPUse Workers projects. */
     importCoreModules?: string[];
     /** Project-specific rule overrides, applied last so they take precedence over the shared defaults. */
     rules?: Linter.RulesRecord;
-    /** Path to the consuming project's `tsconfig.json`, used for typed linting and import resolution. */
-    tsconfigPath: string;
-    /** The consuming project's root directory, e.g. `import.meta.dirname` from its own `eslint.config.ts`. */
-    tsconfigRootDir: string;
+    /** Path to the consuming project's `tsconfig.json`. Defaults to `./tsconfig.json`, used by every DPUse project. */
+    tsconfigPath?: string;
+    /** The consuming project's root directory. Defaults to `process.cwd()`, correct as long as ESLint is run from the project root. */
+    tsconfigRootDir?: string;
 }
 export declare function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Config[];
 export default dpuseESLintConfig;

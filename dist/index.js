@@ -9,14 +9,14 @@ import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 export function dpuseESLintConfig(options) {
-    const { files = ['eslint.config.*', 'src/**/*.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath, tsconfigRootDir } = options;
+    const { files = ['eslint.config.*', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = ['cloudflare:workers'], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
     return defineConfig(
     // Linting scope, strict TypeScript type-checking, and module resolver.
     {
         files,
         extends: [...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked],
         languageOptions: {
-            parserOptions: { project: tsconfigPath, tsconfigRootDir }
+            parserOptions: { project: tsconfigPath, tsconfigRootDir: tsconfigRootDirectory }
         },
         settings: {
             'import-x/core-modules': importCoreModules,
@@ -46,13 +46,13 @@ export function dpuseESLintConfig(options) {
             'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
             '@typescript-eslint/no-unused-vars': 'warn',
             '@eslint-community/eslint-comments/require-description': 'warn',
-            'security/detect-object-injection': 'off',
+            'security/detect-object-injection': 'off', // Generates too many false positives.
             'sonarjs/no-commented-code': 'warn',
             'sonarjs/no-dead-store': 'warn',
             'sonarjs/no-unused-vars': 'warn',
             'sonarjs/todo-tag': 'warn',
             'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
-            'unicorn/no-null': 'off',
+            'unicorn/no-null': 'off', // Null is required for JSON interop.
             'unicorn/switch-case-braces': ['warn', 'avoid'],
             ...rules
         }

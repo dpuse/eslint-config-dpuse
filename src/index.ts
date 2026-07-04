@@ -18,20 +18,27 @@ export interface DPUseESLintConfigOptions {
     files?: string[];
     /** Extra glob patterns to ignore, on top of the standard DPUse build/report directories. */
     ignores?: string[];
-    /** Module specifiers that `import-x` should treat as resolvable core modules (e.g. `cloudflare:workers`). */
+    /** Module specifiers that `import-x` should treat as resolvable core modules. Defaults to `cloudflare:workers`, used by all DPUse Workers projects. */
     importCoreModules?: string[];
     /** Project-specific rule overrides, applied last so they take precedence over the shared defaults. */
     rules?: Linter.RulesRecord;
-    /** Path to the consuming project's `tsconfig.json`, used for typed linting and import resolution. */
-    tsconfigPath: string;
-    /** The consuming project's root directory, e.g. `import.meta.dirname` from its own `eslint.config.ts`. */
-    tsconfigRootDir: string;
+    /** Path to the consuming project's `tsconfig.json`. Defaults to `./tsconfig.json`, used by every DPUse project. */
+    tsconfigPath?: string;
+    /** The consuming project's root directory. Defaults to `process.cwd()`, correct as long as ESLint is run from the project root. */
+    tsconfigRootDir?: string;
 }
 
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 
 export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Config[] {
-    const { files = ['eslint.config.*', 'src/**/*.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath, tsconfigRootDir } = options;
+    const {
+        files = ['eslint.config.*', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'],
+        ignores = [],
+        importCoreModules = ['cloudflare:workers'],
+        rules = {},
+        tsconfigPath = './tsconfig.json',
+        tsconfigRootDir: tsconfigRootDirectory = process.cwd()
+    } = options;
 
     return defineConfig(
         // Linting scope, strict TypeScript type-checking, and module resolver.
@@ -39,7 +46,7 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
             files,
             extends: [...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked],
             languageOptions: {
-                parserOptions: { project: tsconfigPath, tsconfigRootDir }
+                parserOptions: { project: tsconfigPath, tsconfigRootDir: tsconfigRootDirectory }
             },
             settings: {
                 'import-x/core-modules': importCoreModules,
@@ -81,7 +88,7 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
 
                 '@eslint-community/eslint-comments/require-description': 'warn',
 
-                'security/detect-object-injection': 'off',
+                'security/detect-object-injection': 'off', // Generates too many false positives.
 
                 'sonarjs/no-commented-code': 'warn',
                 'sonarjs/no-dead-store': 'warn',
@@ -89,7 +96,7 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
                 'sonarjs/todo-tag': 'warn',
 
                 'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
-                'unicorn/no-null': 'off',
+                'unicorn/no-null': 'off', // Null is required for JSON interop.
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
 
                 ...rules
