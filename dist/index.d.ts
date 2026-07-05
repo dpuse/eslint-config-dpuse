@@ -5,7 +5,7 @@ export interface DPUseESLintConfigOptions {
     files?: string[];
     /** Extra glob patterns to ignore, on top of the standard DPUse build/report directories. */
     ignores?: string[];
-    /** Module specifiers that `import-x` should treat as resolvable core modules. Defaults to `cloudflare:workers`, used by all DPUse Workers projects. */
+    /** Module specifiers that `import-x` should treat as resolvable core modules (e.g. `cloudflare:workers`). */
     importCoreModules?: string[];
     /** Project-specific rule overrides, applied last so they take precedence over the shared defaults. */
     rules?: Linter.RulesRecord;
