@@ -9,7 +9,7 @@ import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 export function dpuseESLintConfig(options) {
-    const { files = ['eslint.config.*', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
+    const { files = ['eslint.config.js', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
     return defineConfig(
     // Linting scope, strict TypeScript type-checking, and module resolver.
     {

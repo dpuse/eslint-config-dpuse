@@ -32,7 +32,7 @@ export interface DPUseESLintConfigOptions {
 
 export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Config[] {
     const {
-        files = ['eslint.config.*', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'],
+        files = ['eslint.config.js', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'],
         ignores = [],
         importCoreModules = [],
         rules = {},
