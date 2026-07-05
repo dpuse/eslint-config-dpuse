@@ -8,23 +8,10 @@ import skipFormatting from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
-export function dpuseESLintConfig(options) {
-    const { files = ['eslint.config.js', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
+/** The rules, plugins, and ignores shared by every DPUse project, TypeScript or otherwise (e.g. dpuse-app's Vue setup). */
+export function dpuseBaseESLintConfig(options) {
+    const { files, ignores = [], rules = {} } = options;
     return defineConfig(
-    // Linting scope, strict TypeScript type-checking, and module resolver.
-    {
-        files,
-        extends: [...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked],
-        languageOptions: {
-            parserOptions: { project: tsconfigPath, tsconfigRootDir: tsconfigRootDirectory }
-        },
-        settings: {
-            'import-x/core-modules': importCoreModules,
-            'import-x/resolver': {
-                typescript: { project: [tsconfigPath] }
-            }
-        }
-    }, 
     // Ignores.
     globalIgnores(['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**', ...ignores]), 
     // Plugin configurations.
@@ -57,6 +44,24 @@ export function dpuseESLintConfig(options) {
             ...rules
         }
     });
+}
+export function dpuseESLintConfig(options) {
+    const { files = ['eslint.config.js', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
+    return defineConfig(
+    // Linting scope, strict TypeScript type-checking, and module resolver.
+    {
+        files,
+        extends: [...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked],
+        languageOptions: {
+            parserOptions: { project: tsconfigPath, tsconfigRootDir: tsconfigRootDirectory }
+        },
+        settings: {
+            'import-x/core-modules': importCoreModules,
+            'import-x/resolver': {
+                typescript: { project: [tsconfigPath] }
+            }
+        }
+    }, ...dpuseBaseESLintConfig({ files, ignores, rules }));
 }
 export default dpuseESLintConfig;
 //# sourceMappingURL=index.js.map
