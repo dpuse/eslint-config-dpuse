@@ -1,14 +1,25 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.104",
+    "version": "1.0.105",
     "private": false,
     "description": "Common ESLint configuration used in most DPUse projects.",
     "license": "MIT",
     "author": "Jonathan Terrell <terrell.jm@gmail.com>",
+    "homepage": "https://www.dpuse.app",
+    "bugs": {
+        "url": "https://github.com/dpuse/eslint-config-dpuse/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dpuse/eslint-config-dpuse.git"
+    },
     "type": "module",
     "sideEffects": false,
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "engines": {
         "node": ">=22",
         "npm": ">=11"
@@ -38,6 +49,7 @@
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-import-x": "^4.17.1",
+        "eslint-plugin-n": "^18.2.1",
         "eslint-plugin-regexp": "^3.1.1",
         "eslint-plugin-security": "^4.0.1",
         "eslint-plugin-sonarjs": "^4.1.0",
@@ -45,7 +57,7 @@
         "typescript-eslint": "^8.62.1"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.656",
+        "@dpuse/dpuse-development": "^0.3.660",
         "@types/eslint-plugin-security": "^3.0.1",
         "@types/node": "^26.1.0",
         "eslint": "^10.6.0",

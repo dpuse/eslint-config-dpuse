@@ -1,5 +1,6 @@
 import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
+import pluginN from 'eslint-plugin-n';
 import { configs as pluginRegexpConfigs } from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
 import pluginSonarJS from 'eslint-plugin-sonarjs';
@@ -25,7 +26,13 @@ export function dpuseBaseESLintConfig(options) {
             '@eslint-community/eslint-comments/no-unlimited-disable': 'error',
             '@eslint-community/eslint-comments/no-unused-enable': 'error'
         }
-    }, pluginImportFlatConfigs.recommended, pluginRegexpConfigs['flat/recommended'], pluginSecurity.configs.recommended, pluginSonarJS.configs.recommended, pluginUnicorn.configs.recommended, skipFormatting, 
+    }, pluginImportFlatConfigs.recommended, {
+        plugins: { n: pluginN },
+        rules: {
+            'n/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
+            'n/no-unsupported-features/node-builtins': 'error'
+        }
+    }, pluginRegexpConfigs['flat/recommended'], pluginSecurity.configs.recommended, pluginSonarJS.configs.recommended, pluginUnicorn.configs.recommended, skipFormatting, 
     // Rule overrides.
     {
         files,

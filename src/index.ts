@@ -2,6 +2,7 @@
 import type { Linter } from 'eslint';
 import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
+import pluginN from 'eslint-plugin-n';
 import { configs as pluginRegexpConfigs } from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
 import pluginSonarJS from 'eslint-plugin-sonarjs';
@@ -57,6 +58,13 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
             }
         },
         pluginImportFlatConfigs.recommended,
+        {
+            plugins: { n: pluginN },
+            rules: {
+                'n/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
+                'n/no-unsupported-features/node-builtins': 'error'
+            }
+        },
         pluginRegexpConfigs['flat/recommended'],
         pluginSecurity.configs.recommended,
         pluginSonarJS.configs.recommended,
