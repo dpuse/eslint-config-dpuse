@@ -88,6 +88,13 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 'sonarjs/no-unused-vars': 'warn',
                 'sonarjs/todo-tag': 'warn',
 
+                'unicorn/consistent-class-member-order': [
+                    'error',
+                    {
+                        // DPUse convention: private helpers are positioned after the public methods that use them, not before.
+                        order: ['static-field', 'static-block', 'static-method', 'private-field', 'public-field', 'constructor', 'public-method', 'private-method']
+                    }
+                ],
                 'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
                 'unicorn/no-null': 'off', // Null is required for JSON interop.
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
