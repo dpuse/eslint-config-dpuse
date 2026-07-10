@@ -1,0 +1,1152 @@
+{
+    "@eslint-community/eslint-plugin-eslint-comments@4.7.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslint-community/eslint-plugin-eslint-comments",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/@eslint-community/eslint-plugin-eslint-comments",
+        "licenseFile": "downloads/@eslint-community/eslint-plugin-eslint-comments@4.7.2-LICENSE.txt"
+    },
+    "@eslint-community/eslint-utils@4.9.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslint-community/eslint-utils",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/@eslint-community/eslint-utils",
+        "licenseFile": "downloads/@eslint-community/eslint-utils@4.9.1-LICENSE.txt"
+    },
+    "@eslint-community/regexpp@4.12.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslint-community/regexpp",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/@eslint-community/regexpp",
+        "licenseFile": "downloads/@eslint-community/regexpp@4.12.2-LICENSE.txt"
+    },
+    "@eslint/config-array@0.23.5": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/rewrite",
+        "publisher": "Nicholas C. Zakas",
+        "path": "node_modules/@eslint/config-array",
+        "licenseFile": "downloads/@eslint/config-array@0.23.5-LICENSE.txt"
+    },
+    "@eslint/config-helpers@0.6.0": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/rewrite",
+        "path": "node_modules/@eslint/config-helpers",
+        "licenseFile": "downloads/@eslint/config-helpers@0.6.0-LICENSE.txt"
+    },
+    "@eslint/core@1.2.1": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/rewrite",
+        "publisher": "Nicholas C. Zakas",
+        "path": "node_modules/@eslint/core",
+        "licenseFile": "downloads/@eslint/core@1.2.1-LICENSE.txt"
+    },
+    "@eslint/object-schema@3.0.5": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/rewrite",
+        "publisher": "Nicholas C. Zakas",
+        "path": "node_modules/@eslint/object-schema",
+        "licenseFile": "downloads/@eslint/object-schema@3.0.5-LICENSE.txt"
+    },
+    "@eslint/plugin-kit@0.7.2": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/rewrite",
+        "publisher": "Nicholas C. Zakas",
+        "path": "node_modules/@eslint/plugin-kit",
+        "licenseFile": "downloads/@eslint/plugin-kit@0.7.2-LICENSE.txt"
+    },
+    "@humanfs/core@0.19.1": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/humanwhocodes/humanfs",
+        "publisher": "Nicholas C. Zakas",
+        "path": "node_modules/@humanfs/core",
+        "licenseFile": "downloads/@humanfs/core@0.19.1-LICENSE.txt"
+    },
+    "@humanfs/node@0.16.7": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/humanwhocodes/humanfs",
+        "publisher": "Nicholas C. Zakas",
+        "path": "node_modules/@humanfs/node",
+        "licenseFile": "downloads/@humanfs/node@0.16.7-LICENSE.txt"
+    },
+    "@humanwhocodes/module-importer@1.0.1": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/humanwhocodes/module-importer",
+        "publisher": "Nicholas C. Zaks",
+        "path": "node_modules/@humanwhocodes/module-importer",
+        "licenseFile": "downloads/@humanwhocodes/module-importer@1.0.1-LICENSE.txt"
+    },
+    "@humanwhocodes/retry@0.4.3": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/humanwhocodes/retry",
+        "publisher": "Nicholas C. Zaks",
+        "path": "node_modules/@humanwhocodes/retry",
+        "licenseFile": "downloads/@humanwhocodes/retry@0.4.3-LICENSE.txt"
+    },
+    "@types/esrecurse@4.3.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/esrecurse",
+        "licenseFile": "downloads/@types/esrecurse@4.3.1-LICENSE.txt"
+    },
+    "@types/estree@1.0.8": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/estree",
+        "licenseFile": "downloads/@types/estree@1.0.8-LICENSE.txt"
+    },
+    "@types/json-schema@7.0.15": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+        "path": "node_modules/@types/json-schema",
+        "licenseFile": "downloads/@types/json-schema@7.0.15-LICENSE.txt"
+    },
+    "@typescript-eslint/eslint-plugin@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/eslint-plugin",
+        "licenseFile": "downloads/@typescript-eslint/eslint-plugin@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/parser@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/parser",
+        "licenseFile": "downloads/@typescript-eslint/parser@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/project-service@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/project-service",
+        "licenseFile": "downloads/@typescript-eslint/project-service@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/scope-manager@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/scope-manager",
+        "licenseFile": "downloads/@typescript-eslint/scope-manager@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/tsconfig-utils@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/tsconfig-utils",
+        "licenseFile": "downloads/@typescript-eslint/tsconfig-utils@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/type-utils@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/type-utils",
+        "licenseFile": "downloads/@typescript-eslint/type-utils@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/types@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/types",
+        "licenseFile": "downloads/@typescript-eslint/types@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/typescript-estree@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/typescript-estree",
+        "licenseFile": "downloads/@typescript-eslint/typescript-estree@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/utils@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/utils",
+        "licenseFile": "downloads/@typescript-eslint/utils@8.63.0-LICENSE.txt"
+    },
+    "@typescript-eslint/visitor-keys@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/@typescript-eslint/visitor-keys",
+        "licenseFile": "downloads/@typescript-eslint/visitor-keys@8.63.0-LICENSE.txt"
+    },
+    "@unrs/resolver-binding-darwin-arm64@1.11.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/unrs/unrs-resolver",
+        "publisher": "JounQin",
+        "email": "admin@1stg.me",
+        "path": "node_modules/@unrs/resolver-binding-darwin-arm64",
+        "licenseFile": "downloads/@unrs/resolver-binding-darwin-arm64@1.11.1-LICENSE.txt"
+    },
+    "acorn-jsx@5.3.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/acornjs/acorn-jsx",
+        "path": "node_modules/acorn-jsx",
+        "licenseFile": "downloads/acorn-jsx@5.3.2-LICENSE.txt"
+    },
+    "acorn@8.17.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/acornjs/acorn",
+        "path": "node_modules/acorn",
+        "licenseFile": "downloads/acorn@8.17.0-LICENSE.txt"
+    },
+    "ajv@6.15.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/ajv-validator/ajv",
+        "publisher": "Evgeny Poberezkin",
+        "path": "node_modules/ajv",
+        "licenseFile": "downloads/ajv@6.15.0-LICENSE.txt"
+    },
+    "balanced-match@4.0.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/juliangruber/balanced-match",
+        "path": "node_modules/balanced-match",
+        "licenseFile": "downloads/balanced-match@4.0.4-LICENSE.txt"
+    },
+    "baseline-browser-mapping@2.10.42": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/web-platform-dx/baseline-browser-mapping",
+        "path": "node_modules/baseline-browser-mapping",
+        "licenseFile": "downloads/baseline-browser-mapping@2.10.42-LICENSE.txt"
+    },
+    "brace-expansion@5.0.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/juliangruber/brace-expansion",
+        "path": "node_modules/brace-expansion",
+        "licenseFile": "downloads/brace-expansion@5.0.6-LICENSE.txt"
+    },
+    "browserslist@4.28.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/browserslist/browserslist",
+        "publisher": "Andrey Sitnik",
+        "email": "andrey@sitnik.es",
+        "path": "node_modules/browserslist",
+        "licenseFile": "downloads/browserslist@4.28.4-LICENSE.txt"
+    },
+    "builtin-modules@3.3.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/builtin-modules",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/builtin-modules",
+        "licenseFile": "downloads/builtin-modules@3.3.0-LICENSE.txt"
+    },
+    "builtin-modules@5.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/builtin-modules",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/is-builtin-module/node_modules/builtin-modules",
+        "licenseFile": "downloads/builtin-modules@5.0.0-LICENSE.txt"
+    },
+    "bytes@3.1.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/visionmedia/bytes.js",
+        "publisher": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "path": "node_modules/bytes",
+        "licenseFile": "downloads/bytes@3.1.2-LICENSE.txt"
+    },
+    "caniuse-lite@1.0.30001802": {
+        "licenses": "CC-BY-4.0",
+        "repository": "https://github.com/browserslist/caniuse-lite",
+        "publisher": "Ben Briggs",
+        "email": "beneb.info@gmail.com",
+        "path": "node_modules/caniuse-lite",
+        "licenseFile": "downloads/caniuse-lite@1.0.30001802-LICENSE.txt"
+    },
+    "change-case@5.4.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/blakeembrey/change-case",
+        "publisher": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "path": "node_modules/change-case",
+        "licenseFile": "downloads/change-case@5.4.4-LICENSE.txt"
+    },
+    "ci-info@4.4.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/watson/ci-info",
+        "publisher": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "path": "node_modules/ci-info",
+        "licenseFile": "downloads/ci-info@4.4.0-LICENSE.txt"
+    },
+    "comment-parser@1.4.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/yavorskiy/comment-parser",
+        "publisher": "Sergiy Yavorsky",
+        "email": "sergiy@yavorsky.me",
+        "path": "node_modules/comment-parser",
+        "licenseFile": "downloads/comment-parser@1.4.6-LICENSE.txt"
+    },
+    "convert-hrtime@5.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/convert-hrtime",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/convert-hrtime",
+        "licenseFile": "downloads/convert-hrtime@5.0.0-LICENSE.txt"
+    },
+    "core-js-compat@3.49.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/zloirock/core-js",
+        "publisher": "Denis Pushkarev",
+        "email": "zloirock@zloirock.ru",
+        "path": "node_modules/core-js-compat",
+        "licenseFile": "downloads/core-js-compat@3.49.0-LICENSE.txt"
+    },
+    "cross-spawn@7.0.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/moxystudio/node-cross-spawn",
+        "publisher": "André Cruz",
+        "email": "andre@moxy.studio",
+        "path": "node_modules/cross-spawn",
+        "licenseFile": "downloads/cross-spawn@7.0.6-LICENSE.txt"
+    },
+    "debug@4.4.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/debug-js/debug",
+        "publisher": "Josh Junon",
+        "path": "node_modules/debug",
+        "licenseFile": "downloads/debug@4.4.3-LICENSE.txt"
+    },
+    "deep-is@0.1.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/thlorenz/deep-is",
+        "publisher": "Thorsten Lorenz",
+        "email": "thlorenz@gmx.de",
+        "path": "node_modules/deep-is",
+        "licenseFile": "downloads/deep-is@0.1.4-LICENSE.txt"
+    },
+    "detect-indent@7.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/detect-indent",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/detect-indent",
+        "licenseFile": "downloads/detect-indent@7.0.2-LICENSE.txt"
+    },
+    "electron-to-chromium@1.5.387": {
+        "licenses": "ISC",
+        "repository": "https://github.com/Kilian/electron-to-chromium",
+        "publisher": "Kilian Valkhof",
+        "path": "node_modules/electron-to-chromium",
+        "licenseFile": "downloads/electron-to-chromium@1.5.387-LICENSE.txt"
+    },
+    "enhanced-resolve@5.24.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/webpack/enhanced-resolve",
+        "publisher": "Tobias Koppers @sokra",
+        "path": "node_modules/enhanced-resolve",
+        "licenseFile": "downloads/enhanced-resolve@5.24.1-LICENSE.txt"
+    },
+    "escalade@3.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/lukeed/escalade",
+        "publisher": "Luke Edwards",
+        "email": "luke.edwards05@gmail.com",
+        "path": "node_modules/escalade",
+        "licenseFile": "downloads/escalade@3.2.0-LICENSE.txt"
+    },
+    "escape-string-regexp@4.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/escape-string-regexp",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/escape-string-regexp",
+        "licenseFile": "downloads/escape-string-regexp@4.0.0-LICENSE.txt"
+    },
+    "eslint-compat-utils@0.5.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/ota-meshi/eslint-compat-utils",
+        "publisher": "Yosuke Ota",
+        "path": "node_modules/eslint-compat-utils",
+        "licenseFile": "downloads/eslint-compat-utils@0.5.1-LICENSE.txt"
+    },
+    "eslint-config-prettier@10.1.8": {
+        "licenses": "MIT",
+        "repository": "https://github.com/prettier/eslint-config-prettier",
+        "publisher": "Simon Lydell",
+        "path": "node_modules/eslint-config-prettier",
+        "licenseFile": "downloads/eslint-config-prettier@10.1.8-LICENSE.txt"
+    },
+    "eslint-import-context@0.1.9": {
+        "licenses": "MIT",
+        "repository": "https://github.com/un-ts/eslint-import-context",
+        "publisher": "JounQin",
+        "email": "admin@1stg.me",
+        "path": "node_modules/eslint-import-context",
+        "licenseFile": "downloads/eslint-import-context@0.1.9-LICENSE.txt"
+    },
+    "eslint-import-resolver-typescript@4.4.5": {
+        "licenses": "ISC",
+        "repository": "https://github.com/import-js/eslint-import-resolver-typescript",
+        "publisher": "Alex Gorbatchev",
+        "email": "alex.gorbatchev@gmail.com",
+        "path": "node_modules/eslint-import-resolver-typescript",
+        "licenseFile": "downloads/eslint-import-resolver-typescript@4.4.5-LICENSE.txt"
+    },
+    "eslint-plugin-es-x@7.8.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslint-community/eslint-plugin-es-x",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/eslint-plugin-es-x",
+        "licenseFile": "downloads/eslint-plugin-es-x@7.8.0-LICENSE.txt"
+    },
+    "eslint-plugin-import-x@4.17.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/un-ts/eslint-plugin-import-x",
+        "publisher": "JounQin",
+        "email": "admin@1stg.me",
+        "path": "node_modules/eslint-plugin-import-x",
+        "licenseFile": "downloads/eslint-plugin-import-x@4.17.1-LICENSE.txt"
+    },
+    "eslint-plugin-n@18.2.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslint-community/eslint-plugin-n",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/eslint-plugin-n",
+        "licenseFile": "downloads/eslint-plugin-n@18.2.1-LICENSE.txt"
+    },
+    "eslint-plugin-regexp@3.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/ota-meshi/eslint-plugin-regexp",
+        "publisher": "Yosuke Ota",
+        "path": "node_modules/eslint-plugin-regexp",
+        "licenseFile": "downloads/eslint-plugin-regexp@3.1.1-LICENSE.txt"
+    },
+    "eslint-plugin-security@4.0.1": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint-community/eslint-plugin-security",
+        "publisher": "Node Security Project",
+        "path": "node_modules/eslint-plugin-security",
+        "licenseFile": "downloads/eslint-plugin-security@4.0.1-LICENSE.txt"
+    },
+    "eslint-plugin-sonarjs@4.1.0": {
+        "licenses": "LGPL-3.0-only",
+        "repository": "https://github.com/SonarSource/SonarJS",
+        "publisher": "SonarSource",
+        "path": "node_modules/eslint-plugin-sonarjs",
+        "licenseFile": "downloads/eslint-plugin-sonarjs@4.1.0-LICENSE.txt"
+    },
+    "eslint-plugin-unicorn@71.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/eslint-plugin-unicorn",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/eslint-plugin-unicorn",
+        "licenseFile": "downloads/eslint-plugin-unicorn@71.1.0-LICENSE.txt"
+    },
+    "eslint-scope@9.1.2": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/eslint/js",
+        "path": "node_modules/eslint-scope",
+        "licenseFile": "downloads/eslint-scope@9.1.2-LICENSE.txt"
+    },
+    "eslint-visitor-keys@3.4.3": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/eslint-visitor-keys",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/eslint-visitor-keys",
+        "licenseFile": "downloads/eslint-visitor-keys@3.4.3-LICENSE.txt"
+    },
+    "eslint-visitor-keys@5.0.1": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/eslint/js",
+        "publisher": "Toru Nagashima",
+        "path": "node_modules/eslint/node_modules/eslint-visitor-keys",
+        "licenseFile": "downloads/eslint-visitor-keys@5.0.1-LICENSE.txt"
+    },
+    "eslint@10.6.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslint/eslint",
+        "publisher": "Nicholas C. Zakas",
+        "email": "nicholas+npm@nczconsulting.com",
+        "path": "node_modules/eslint",
+        "licenseFile": "downloads/eslint@10.6.0-LICENSE.txt"
+    },
+    "espree@11.2.0": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/eslint/js",
+        "publisher": "Nicholas C. Zakas",
+        "email": "nicholas+npm@nczconsulting.com",
+        "path": "node_modules/espree",
+        "licenseFile": "downloads/espree@11.2.0-LICENSE.txt"
+    },
+    "esquery@1.7.0": {
+        "licenses": "BSD-3-Clause",
+        "repository": "https://github.com/estools/esquery",
+        "publisher": "Joel Feenstra",
+        "email": "jrfeenst+esquery@gmail.com",
+        "path": "node_modules/esquery",
+        "licenseFile": "downloads/esquery@1.7.0-LICENSE.txt"
+    },
+    "esrecurse@4.3.0": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/estools/esrecurse",
+        "path": "node_modules/esrecurse",
+        "licenseFile": "downloads/esrecurse@4.3.0-LICENSE.txt"
+    },
+    "estraverse@5.3.0": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/estools/estraverse",
+        "path": "node_modules/estraverse",
+        "licenseFile": "downloads/estraverse@5.3.0-LICENSE.txt"
+    },
+    "esutils@2.0.3": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/estools/esutils",
+        "path": "node_modules/esutils",
+        "licenseFile": "downloads/esutils@2.0.3-LICENSE.txt"
+    },
+    "fast-deep-equal@3.1.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/epoberezkin/fast-deep-equal",
+        "publisher": "Evgeny Poberezkin",
+        "path": "node_modules/fast-deep-equal",
+        "licenseFile": "downloads/fast-deep-equal@3.1.3-LICENSE.txt"
+    },
+    "fast-json-stable-stringify@2.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/epoberezkin/fast-json-stable-stringify",
+        "publisher": "James Halliday",
+        "email": "mail@substack.net",
+        "path": "node_modules/fast-json-stable-stringify",
+        "licenseFile": "downloads/fast-json-stable-stringify@2.1.0-LICENSE.txt"
+    },
+    "fast-levenshtein@2.0.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/hiddentao/fast-levenshtein",
+        "publisher": "Ramesh Nair",
+        "email": "ram@hiddentao.com",
+        "path": "node_modules/fast-levenshtein",
+        "licenseFile": "downloads/fast-levenshtein@2.0.6-LICENSE.txt"
+    },
+    "fdir@6.5.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/thecodrr/fdir",
+        "publisher": "thecodrr",
+        "email": "thecodrr@protonmail.com",
+        "path": "node_modules/fdir",
+        "licenseFile": "downloads/fdir@6.5.0-LICENSE.txt"
+    },
+    "file-entry-cache@8.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jaredwray/file-entry-cache",
+        "publisher": "Jared Wray",
+        "path": "node_modules/file-entry-cache",
+        "licenseFile": "downloads/file-entry-cache@8.0.0-LICENSE.txt"
+    },
+    "find-up-simple@1.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/find-up-simple",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/find-up-simple",
+        "licenseFile": "downloads/find-up-simple@1.0.1-LICENSE.txt"
+    },
+    "find-up@5.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/find-up",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/find-up",
+        "licenseFile": "downloads/find-up@5.0.0-LICENSE.txt"
+    },
+    "flat-cache@4.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jaredwray/flat-cache",
+        "publisher": "Jared Wray",
+        "path": "node_modules/flat-cache",
+        "licenseFile": "downloads/flat-cache@4.0.1-LICENSE.txt"
+    },
+    "flatted@3.4.2": {
+        "licenses": "ISC",
+        "repository": "https://github.com/WebReflection/flatted",
+        "publisher": "Andrea Giammarchi",
+        "path": "node_modules/flatted",
+        "licenseFile": "downloads/flatted@3.4.2-LICENSE.txt"
+    },
+    "function-timeout@1.0.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/function-timeout",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/function-timeout",
+        "licenseFile": "downloads/function-timeout@1.0.2-LICENSE.txt"
+    },
+    "functional-red-black-tree@1.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/mikolalysenko/functional-red-black-tree",
+        "publisher": "Mikola Lysenko",
+        "path": "node_modules/functional-red-black-tree",
+        "licenseFile": "downloads/functional-red-black-tree@1.0.1-LICENSE.txt"
+    },
+    "get-tsconfig@4.13.6": {
+        "licenses": "MIT",
+        "repository": "https://github.com/privatenumber/get-tsconfig",
+        "publisher": "Hiroki Osame",
+        "email": "hiroki.osame@gmail.com",
+        "path": "node_modules/get-tsconfig",
+        "licenseFile": "downloads/get-tsconfig@4.13.6-LICENSE.txt"
+    },
+    "glob-parent@6.0.2": {
+        "licenses": "ISC",
+        "repository": "https://github.com/gulpjs/glob-parent",
+        "publisher": "Gulp Team",
+        "email": "team@gulpjs.com",
+        "path": "node_modules/glob-parent",
+        "licenseFile": "downloads/glob-parent@6.0.2-LICENSE.txt"
+    },
+    "globals@15.15.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/globals",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/eslint-plugin-n/node_modules/globals",
+        "licenseFile": "downloads/globals@15.15.0-LICENSE.txt"
+    },
+    "globals@17.7.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/globals",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/globals",
+        "licenseFile": "downloads/globals@17.7.0-LICENSE.txt"
+    },
+    "globrex@0.1.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/terkelg/globrex",
+        "publisher": "Terkel Gjervig",
+        "path": "node_modules/globrex",
+        "licenseFile": "downloads/globrex@0.1.2-LICENSE.txt"
+    },
+    "graceful-fs@4.2.11": {
+        "licenses": "ISC",
+        "repository": "https://github.com/isaacs/node-graceful-fs",
+        "path": "node_modules/graceful-fs",
+        "licenseFile": "downloads/graceful-fs@4.2.11-LICENSE.txt"
+    },
+    "identifier-regex@1.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/identifier-regex",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/identifier-regex",
+        "licenseFile": "downloads/identifier-regex@1.1.0-LICENSE.txt"
+    },
+    "ignore@5.3.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/kaelzhang/node-ignore",
+        "publisher": "kael",
+        "path": "node_modules/eslint/node_modules/ignore",
+        "licenseFile": "downloads/ignore@5.3.2-LICENSE.txt"
+    },
+    "ignore@7.0.5": {
+        "licenses": "MIT",
+        "repository": "https://github.com/kaelzhang/node-ignore",
+        "publisher": "kael",
+        "path": "node_modules/ignore",
+        "licenseFile": "downloads/ignore@7.0.5-LICENSE.txt"
+    },
+    "imurmurhash@0.1.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jensyt/imurmurhash-js",
+        "publisher": "Jens Taylor",
+        "email": "jensyt@gmail.com",
+        "path": "node_modules/imurmurhash",
+        "licenseFile": "downloads/imurmurhash@0.1.4-LICENSE.txt"
+    },
+    "indent-string@5.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/indent-string",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/indent-string",
+        "licenseFile": "downloads/indent-string@5.0.0-LICENSE.txt"
+    },
+    "is-builtin-module@5.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/is-builtin-module",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/is-builtin-module",
+        "licenseFile": "downloads/is-builtin-module@5.0.0-LICENSE.txt"
+    },
+    "is-bun-module@2.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/SunsetTechuila/is-bun-module",
+        "publisher": "SunsetTechuila",
+        "email": "techuila.sunset@gmail.com",
+        "path": "node_modules/is-bun-module",
+        "licenseFile": "downloads/is-bun-module@2.0.0-LICENSE.txt"
+    },
+    "is-extglob@2.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jonschlinkert/is-extglob",
+        "publisher": "Jon Schlinkert",
+        "path": "node_modules/is-extglob",
+        "licenseFile": "downloads/is-extglob@2.1.1-LICENSE.txt"
+    },
+    "is-glob@4.0.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromatch/is-glob",
+        "publisher": "Jon Schlinkert",
+        "path": "node_modules/is-glob",
+        "licenseFile": "downloads/is-glob@4.0.3-LICENSE.txt"
+    },
+    "is-identifier@1.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/is-identifier",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/is-identifier",
+        "licenseFile": "downloads/is-identifier@1.1.0-LICENSE.txt"
+    },
+    "isexe@2.0.0": {
+        "licenses": "ISC",
+        "repository": "https://github.com/isaacs/isexe",
+        "publisher": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "path": "node_modules/isexe",
+        "licenseFile": "downloads/isexe@2.0.0-LICENSE.txt"
+    },
+    "jsdoc-type-pratt-parser@7.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jsdoc-type-pratt-parser/jsdoc-type-pratt-parser",
+        "publisher": "Simon Seyock",
+        "path": "node_modules/jsdoc-type-pratt-parser",
+        "licenseFile": "downloads/jsdoc-type-pratt-parser@7.2.0-LICENSE.txt"
+    },
+    "jsesc@3.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/mathiasbynens/jsesc",
+        "publisher": "Mathias Bynens",
+        "path": "node_modules/jsesc",
+        "licenseFile": "downloads/jsesc@3.1.0-LICENSE.txt"
+    },
+    "json-buffer@3.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/dominictarr/json-buffer",
+        "publisher": "Dominic Tarr",
+        "email": "dominic.tarr@gmail.com",
+        "path": "node_modules/json-buffer",
+        "licenseFile": "downloads/json-buffer@3.0.1-LICENSE.txt"
+    },
+    "json-schema-traverse@0.4.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/epoberezkin/json-schema-traverse",
+        "publisher": "Evgeny Poberezkin",
+        "path": "node_modules/json-schema-traverse",
+        "licenseFile": "downloads/json-schema-traverse@0.4.1-LICENSE.txt"
+    },
+    "json-stable-stringify-without-jsonify@1.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/samn/json-stable-stringify",
+        "publisher": "James Halliday",
+        "email": "mail@substack.net",
+        "path": "node_modules/json-stable-stringify-without-jsonify",
+        "licenseFile": "downloads/json-stable-stringify-without-jsonify@1.0.1-LICENSE.txt"
+    },
+    "jsx-ast-utils-x@0.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/eslinter/jsx-ast-utils-x",
+        "publisher": "Ethan Cohen",
+        "path": "node_modules/jsx-ast-utils-x",
+        "licenseFile": "downloads/jsx-ast-utils-x@0.1.0-LICENSE.txt"
+    },
+    "keyv@4.5.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jaredwray/keyv",
+        "publisher": "Jared Wray",
+        "email": "me@jaredwray.com",
+        "path": "node_modules/keyv",
+        "licenseFile": "downloads/keyv@4.5.4-LICENSE.txt"
+    },
+    "levn@0.4.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/gkz/levn",
+        "publisher": "George Zahariev",
+        "email": "z@georgezahariev.com",
+        "path": "node_modules/levn",
+        "licenseFile": "downloads/levn@0.4.1-LICENSE.txt"
+    },
+    "locate-path@6.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/locate-path",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/locate-path",
+        "licenseFile": "downloads/locate-path@6.0.0-LICENSE.txt"
+    },
+    "lodash.merge@4.6.2": {
+        "licenses": "MIT",
+        "repository": "https://github.com/lodash/lodash",
+        "publisher": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "path": "node_modules/lodash.merge",
+        "licenseFile": "downloads/lodash.merge@4.6.2-LICENSE.txt"
+    },
+    "make-asynchronous@1.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/make-asynchronous",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/make-asynchronous",
+        "licenseFile": "downloads/make-asynchronous@1.1.0-LICENSE.txt"
+    },
+    "minimatch@10.2.5": {
+        "licenses": "BlueOak-1.0.0",
+        "repository": "https://github.com/isaacs/minimatch",
+        "publisher": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "path": "node_modules/minimatch",
+        "licenseFile": "downloads/minimatch@10.2.5-LICENSE.txt"
+    },
+    "ms@2.1.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/vercel/ms",
+        "path": "node_modules/ms",
+        "licenseFile": "downloads/ms@2.1.3-LICENSE.txt"
+    },
+    "napi-postinstall@0.3.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/un-ts/napi-postinstall",
+        "publisher": "JounQin",
+        "email": "admin@1stg.me",
+        "path": "node_modules/napi-postinstall",
+        "licenseFile": "downloads/napi-postinstall@0.3.4-LICENSE.txt"
+    },
+    "natural-compare@1.4.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/litejs/natural-compare-lite",
+        "publisher": "Lauri Rooden",
+        "path": "node_modules/natural-compare",
+        "licenseFile": "downloads/natural-compare@1.4.0-LICENSE.txt"
+    },
+    "node-releases@2.0.50": {
+        "licenses": "MIT",
+        "repository": "https://github.com/chicoxyzzy/node-releases",
+        "publisher": "Sergey Rubanov",
+        "email": "chi187@gmail.com",
+        "path": "node_modules/node-releases",
+        "licenseFile": "downloads/node-releases@2.0.50-LICENSE.txt"
+    },
+    "optionator@0.9.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/gkz/optionator",
+        "publisher": "George Zahariev",
+        "email": "z@georgezahariev.com",
+        "path": "node_modules/optionator",
+        "licenseFile": "downloads/optionator@0.9.4-LICENSE.txt"
+    },
+    "p-event@6.0.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/p-event",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/p-event",
+        "licenseFile": "downloads/p-event@6.0.1-LICENSE.txt"
+    },
+    "p-limit@3.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/p-limit",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/p-limit",
+        "licenseFile": "downloads/p-limit@3.1.0-LICENSE.txt"
+    },
+    "p-locate@5.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/p-locate",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/p-locate",
+        "licenseFile": "downloads/p-locate@5.0.0-LICENSE.txt"
+    },
+    "p-timeout@6.1.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/p-timeout",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/p-timeout",
+        "licenseFile": "downloads/p-timeout@6.1.4-LICENSE.txt"
+    },
+    "path-exists@4.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/path-exists",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/path-exists",
+        "licenseFile": "downloads/path-exists@4.0.0-LICENSE.txt"
+    },
+    "path-key@3.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/path-key",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/path-key",
+        "licenseFile": "downloads/path-key@3.1.1-LICENSE.txt"
+    },
+    "picocolors@1.1.1": {
+        "licenses": "ISC",
+        "repository": "https://github.com/alexeyraspopov/picocolors",
+        "publisher": "Alexey Raspopov",
+        "path": "node_modules/picocolors",
+        "licenseFile": "downloads/picocolors@1.1.1-LICENSE.txt"
+    },
+    "picomatch@4.0.4": {
+        "licenses": "MIT",
+        "repository": "https://github.com/micromatch/picomatch",
+        "publisher": "Jon Schlinkert",
+        "path": "node_modules/picomatch",
+        "licenseFile": "downloads/picomatch@4.0.4-LICENSE.txt"
+    },
+    "pluralize@8.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/blakeembrey/pluralize",
+        "publisher": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "path": "node_modules/pluralize",
+        "licenseFile": "downloads/pluralize@8.0.0-LICENSE.txt"
+    },
+    "prelude-ls@1.2.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/gkz/prelude-ls",
+        "publisher": "George Zahariev",
+        "email": "z@georgezahariev.com",
+        "path": "node_modules/prelude-ls",
+        "licenseFile": "downloads/prelude-ls@1.2.1-LICENSE.txt"
+    },
+    "punycode@2.3.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/mathiasbynens/punycode.js",
+        "publisher": "Mathias Bynens",
+        "path": "node_modules/punycode",
+        "licenseFile": "downloads/punycode@2.3.1-LICENSE.txt"
+    },
+    "quote-js-string@0.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/quote-js-string",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/quote-js-string",
+        "licenseFile": "downloads/quote-js-string@0.1.0-LICENSE.txt"
+    },
+    "refa@0.12.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/RunDevelopment/refa",
+        "publisher": "Michael Schmidt",
+        "path": "node_modules/refa",
+        "licenseFile": "downloads/refa@0.12.1-LICENSE.txt"
+    },
+    "regexp-ast-analysis@0.7.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/RunDevelopment/regexp-ast-analysis",
+        "publisher": "Michael Schmidt",
+        "path": "node_modules/regexp-ast-analysis",
+        "licenseFile": "downloads/regexp-ast-analysis@0.7.1-LICENSE.txt"
+    },
+    "regexp-tree@0.1.27": {
+        "licenses": "MIT",
+        "repository": "https://github.com/DmitrySoshnikov/regexp-tree",
+        "publisher": "Dmitry Soshnikov",
+        "path": "node_modules/regexp-tree",
+        "licenseFile": "downloads/regexp-tree@0.1.27-LICENSE.txt"
+    },
+    "regjsparser@0.13.2": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/jviereck/regjsparser",
+        "publisher": "'Julian Viereck'",
+        "email": "julian.viereck@gmail.com",
+        "path": "node_modules/regjsparser",
+        "licenseFile": "downloads/regjsparser@0.13.2-LICENSE.txt"
+    },
+    "reserved-identifiers@1.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/reserved-identifiers",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/reserved-identifiers",
+        "licenseFile": "downloads/reserved-identifiers@1.2.0-LICENSE.txt"
+    },
+    "resolve-pkg-maps@1.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/privatenumber/resolve-pkg-maps",
+        "publisher": "Hiroki Osame",
+        "email": "hiroki.osame@gmail.com",
+        "path": "node_modules/resolve-pkg-maps",
+        "licenseFile": "downloads/resolve-pkg-maps@1.0.0-LICENSE.txt"
+    },
+    "safe-regex@2.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/davisjam/safe-regex",
+        "publisher": "James C.",
+        "email": "davisjam@vt.edu",
+        "path": "node_modules/safe-regex",
+        "licenseFile": "downloads/safe-regex@2.1.1-LICENSE.txt"
+    },
+    "scslre@0.3.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/RunDevelopment/scslre",
+        "publisher": "Michael Schmidt",
+        "path": "node_modules/scslre",
+        "licenseFile": "downloads/scslre@0.3.0-LICENSE.txt"
+    },
+    "semver@7.8.5": {
+        "licenses": "ISC",
+        "repository": "https://github.com/npm/node-semver",
+        "publisher": "GitHub Inc.",
+        "path": "node_modules/semver",
+        "licenseFile": "downloads/semver@7.8.5-LICENSE.txt"
+    },
+    "shebang-command@2.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/kevva/shebang-command",
+        "publisher": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "path": "node_modules/shebang-command",
+        "licenseFile": "downloads/shebang-command@2.0.0-LICENSE.txt"
+    },
+    "shebang-regex@3.0.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/shebang-regex",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/shebang-regex",
+        "licenseFile": "downloads/shebang-regex@3.0.0-LICENSE.txt"
+    },
+    "stable-hash-x@0.2.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/un-ts/stable-hash-x",
+        "publisher": "Shu Ding",
+        "path": "node_modules/stable-hash-x",
+        "licenseFile": "downloads/stable-hash-x@0.2.0-LICENSE.txt"
+    },
+    "strip-indent@4.1.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/strip-indent",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/strip-indent",
+        "licenseFile": "downloads/strip-indent@4.1.1-LICENSE.txt"
+    },
+    "super-regex@1.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/super-regex",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/super-regex",
+        "licenseFile": "downloads/super-regex@1.1.0-LICENSE.txt"
+    },
+    "tapable@2.3.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/webpack/tapable",
+        "publisher": "Tobias Koppers @sokra",
+        "path": "node_modules/tapable",
+        "licenseFile": "downloads/tapable@2.3.3-LICENSE.txt"
+    },
+    "time-span@5.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/time-span",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/time-span",
+        "licenseFile": "downloads/time-span@5.1.0-LICENSE.txt"
+    },
+    "tinyglobby@0.2.15": {
+        "licenses": "MIT",
+        "repository": "https://github.com/SuperchupuDev/tinyglobby",
+        "publisher": "Superchupu",
+        "path": "node_modules/tinyglobby",
+        "licenseFile": "downloads/tinyglobby@0.2.15-LICENSE.txt"
+    },
+    "ts-api-utils@2.5.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/JoshuaKGoldberg/ts-api-utils",
+        "publisher": "JoshuaKGoldberg",
+        "email": "npm@joshuakgoldberg.com",
+        "path": "node_modules/ts-api-utils",
+        "licenseFile": "downloads/ts-api-utils@2.5.0-LICENSE.txt"
+    },
+    "type-check@0.4.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/gkz/type-check",
+        "publisher": "George Zahariev",
+        "email": "z@georgezahariev.com",
+        "path": "node_modules/type-check",
+        "licenseFile": "downloads/type-check@0.4.0-LICENSE.txt"
+    },
+    "type-fest@4.41.0": {
+        "licenses": "(MIT OR CC0-1.0)",
+        "repository": "https://github.com/sindresorhus/type-fest",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/type-fest",
+        "licenseFile": "downloads/type-fest@4.41.0-LICENSE.txt"
+    },
+    "typescript-eslint@8.63.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/typescript-eslint/typescript-eslint",
+        "path": "node_modules/typescript-eslint",
+        "licenseFile": "downloads/typescript-eslint@8.63.0-LICENSE.txt"
+    },
+    "typescript@6.0.3": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/microsoft/TypeScript",
+        "publisher": "Microsoft Corp.",
+        "path": "node_modules/typescript",
+        "licenseFile": "downloads/typescript@6.0.3-LICENSE.txt"
+    },
+    "unrs-resolver@1.11.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/unrs/unrs-resolver",
+        "publisher": "JounQin",
+        "email": "admin@1stg.me",
+        "path": "node_modules/unrs-resolver",
+        "licenseFile": "downloads/unrs-resolver@1.11.1-LICENSE.txt"
+    },
+    "update-browserslist-db@1.2.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/browserslist/update-db",
+        "publisher": "Andrey Sitnik",
+        "email": "andrey@sitnik.ru",
+        "path": "node_modules/update-browserslist-db",
+        "licenseFile": "downloads/update-browserslist-db@1.2.3-LICENSE.txt"
+    },
+    "uri-js@4.4.1": {
+        "licenses": "BSD-2-Clause",
+        "repository": "https://github.com/garycourt/uri-js",
+        "publisher": "Gary Court",
+        "email": "gary.court@gmail.com",
+        "path": "node_modules/uri-js",
+        "licenseFile": "downloads/uri-js@4.4.1-LICENSE.txt"
+    },
+    "web-worker@1.5.0": {
+        "licenses": "Apache-2.0",
+        "repository": "https://github.com/developit/web-worker",
+        "path": "node_modules/web-worker",
+        "licenseFile": "downloads/web-worker@1.5.0-LICENSE.txt"
+    },
+    "which@2.0.2": {
+        "licenses": "ISC",
+        "repository": "https://github.com/isaacs/node-which",
+        "publisher": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "path": "node_modules/which",
+        "licenseFile": "downloads/which@2.0.2-LICENSE.txt"
+    },
+    "word-wrap@1.2.5": {
+        "licenses": "MIT",
+        "repository": "https://github.com/jonschlinkert/word-wrap",
+        "publisher": "Jon Schlinkert",
+        "path": "node_modules/word-wrap",
+        "licenseFile": "downloads/word-wrap@1.2.5-LICENSE.txt"
+    },
+    "yaml@2.9.0": {
+        "licenses": "ISC",
+        "repository": "https://github.com/eemeli/yaml",
+        "publisher": "Eemeli Aro",
+        "email": "eemeli@gmail.com",
+        "path": "node_modules/yaml",
+        "licenseFile": "downloads/yaml@2.9.0-LICENSE.txt"
+    },
+    "yocto-queue@0.1.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/sindresorhus/yocto-queue",
+        "publisher": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "path": "node_modules/yocto-queue",
+        "licenseFile": "downloads/yocto-queue@0.1.0-LICENSE.txt"
+    }
+}
