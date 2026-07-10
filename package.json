@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.111",
+    "version": "1.0.112",
     "private": false,
     "description": "Common ESLint configuration used in most DPUse projects.",
     "license": "MIT",
@@ -32,7 +32,11 @@
         "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
         "build": "tsc -p tsconfig.build.json",
         "check": "node -e \"import('@dpuse/dpuse-development').then(m => m.checkConfigFiles())\" && node -e \"import('@dpuse/dpuse-development').then(m => m.checkDependencies())\"",
-        "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentDependencies('Apache-2.0;BSD-2-Clause;BSD-3-Clause;BlueOak-1.0.0;CC-BY-4.0;ISC;LGPL-3.0-only;MIT'))\"",
+        "document": "npm run documentOpening && npm run documentUsage && npm run documentDependencies && npm run documentGovernance",
+        "documentDependencies": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentDependencies(''))\"",
+        "documentGovernance": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentGovernance())\"",
+        "documentOpening": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentOpening())\"",
+        "documentUsage": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentUsage())\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
         "release": "npm run build && npm run sync && op run --env-file=.env -- npm publish --access public",
@@ -56,7 +60,7 @@
         "typescript-eslint": "^8.63.0"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.685",
+        "@dpuse/dpuse-development": "^0.3.686",
         "@types/eslint-plugin-security": "^3.0.1",
         "@types/node": "^26.1.1",
         "eslint": "^10.6.0",

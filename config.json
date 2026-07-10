@@ -1,4 +1,9 @@
 {
     "id": "eslint-config-dpuse",
-    "version": "1.0.111"
+    "description": {
+        "en": [
+            "Common ESLint configuration used in most DPUse projects."
+        ]
+    },
+    "version": "1.0.112"
 }
