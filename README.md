@@ -1,5 +1,8 @@
 # DPUse ESLint Configuration
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse.svg)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
+
 <!-- OPENING_START -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
