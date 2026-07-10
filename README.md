@@ -23,6 +23,8 @@ Common ESLint configuration used in most DPUse projects.
 
 <!-- OPENING_END -->
 
+## Usage
+
 <!-- USAGE_START -->
 
 This connector is automatically uploaded to the DPUse Engine cloud once released and becomes instantly available to all new browser app instances, with existing instances notified of the update.
