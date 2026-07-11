@@ -96,7 +96,6 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                     }
                 ],
                 'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
-                'no-non-function-verb-prefix': 'off',
                 'unicorn/no-null': 'off', // Null is required for JSON interop.
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
 
