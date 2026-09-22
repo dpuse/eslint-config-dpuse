@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.116",
+    "version": "1.0.117",
     "private": false,
     "description": "Common ESLint configuration used in most DPUse projects.",
     "license": "MIT",
@@ -20,13 +20,24 @@
         "dist"
     ],
     "engines": {
-        "node": ">=22",
-        "npm": ">=11"
+        "node": ">=24",
+        "npm": ">=12"
+    },
+    "devEngines": {
+        "runtime": {
+            "name": "node",
+            "version": ">=24",
+            "onFail": "error"
+        },
+        "packageManager": {
+            "name": "npm",
+            "version": ">=12",
+            "onFail": "error"
+        }
     },
     "prettier": "@dpuse/dpuse-development/prettierrc",
     "allowScripts": {
-        "unrs-resolver@1.11.1": true,
-        "unrs-resolver@1.12.2": true
+        "unrs-resolver@1.11.1": true
     },
     "scripts": {
         "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
@@ -39,33 +50,33 @@
         "documentUsage": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentUsage())\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
-        "release": "npm run build && npm run sync && op run --env-file=.env -- npm publish --access public",
+        "release": "npm run sync && gh release create \"v$(npm pkg get version | tr -d '\"')\" --target \"$(git rev-parse HEAD)\" --generate-notes --latest",
         "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
         "test:e2e": "echo \"❌ 'test:e2e' command not implemented.\"",
         "test:unit": "echo \"❌ 'test:unit' command not implemented.\""
     },
     "peerDependencies": {
-        "eslint": "^10.8.1"
+        "eslint": "^10.11.0"
     },
     "dependencies": {
-        "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
+        "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-import-x": "^4.17.1",
         "eslint-plugin-n": "^18.3.0",
-        "eslint-plugin-regexp": "^3.2.0",
+        "eslint-plugin-regexp": "^3.3.1",
         "eslint-plugin-security": "^4.0.1",
-        "eslint-plugin-sonarjs": "^4.2.0",
-        "eslint-plugin-unicorn": "^73.0.0",
-        "typescript-eslint": "^8.67.0"
+        "eslint-plugin-sonarjs": "^4.2.1",
+        "eslint-plugin-unicorn": "^76.0.0",
+        "typescript-eslint": "^8.70.1"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.705",
+        "@dpuse/dpuse-development": "^0.3.715",
         "@types/eslint-plugin-security": "^3.0.1",
-        "@types/node": "^26.2.0",
-        "eslint": "^10.8.1",
-        "prettier": "^3.9.6",
+        "@types/node": "^26.6.2",
+        "eslint": "^10.11.0",
+        "prettier": "^3.9.8",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.67.0"
+        "typescript-eslint": "^8.70.1"
     }
 }
