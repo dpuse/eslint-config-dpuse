@@ -38,12 +38,14 @@ export function dpuseBaseESLintConfig(options) {
         files,
         rules: {
             'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
-            '@typescript-eslint/no-unused-vars': 'warn',
+            // A leading underscore marks a binding that exists only to be discarded, such as the key omitted by a
+            // destructuring rest.
+            '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
             '@eslint-community/eslint-comments/require-description': 'warn',
             'security/detect-object-injection': 'off', // Generates too many false positives.
             'sonarjs/no-commented-code': 'warn',
             'sonarjs/no-dead-store': 'warn',
-            'sonarjs/no-unused-vars': 'warn',
+            'sonarjs/no-unused-vars': 'off', // Duplicates '@typescript-eslint/no-unused-vars', but ignores no naming convention.
             'sonarjs/todo-tag': 'warn',
             'unicorn/consistent-class-member-order': [
                 'error',
