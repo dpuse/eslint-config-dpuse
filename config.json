@@ -5,7 +5,7 @@
             "Common ESLint configuration used in most DPUse projects."
         ]
     },
-    "version": "1.0.117",
+    "version": "1.0.118",
     "icon": null,
     "iconDark": null
 }
