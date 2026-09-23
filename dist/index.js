@@ -54,13 +54,14 @@ export function dpuseBaseESLintConfig(options) {
             ],
             'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
             'unicorn/no-null': 'off', // Null is required for JSON interop.
+            'unicorn/single-line-block-comment-style': 'off', // Prefer compact single line when appropriate.
             'unicorn/switch-case-braces': ['warn', 'avoid'],
             ...rules
         }
     });
 }
 export function dpuseESLintConfig(options) {
-    const { files = ['eslint.config.js', 'src/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
+    const { files = ['eslint.config.js', 'src/**/*.ts', 'tests/**/*.ts', 'vite.config.ts', 'vitest.config.ts'], ignores = [], importCoreModules = [], rules = {}, tsconfigPath = './tsconfig.json', tsconfigRootDir: tsconfigRootDirectory = process.cwd() } = options;
     return defineConfig(
     // Linting scope, strict TypeScript type-checking, and module resolver.
     {
