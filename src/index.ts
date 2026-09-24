@@ -102,6 +102,7 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 'unicorn/no-null': 'off', // Null is required for JSON interop.
                 'unicorn/single-line-block-comment-style': 'off', // Prefer compact single line when appropriate.
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
+                'unicorn/text-encoding-identifier-case': ['error', { withDash: true }], // 'utf-8' is the standard name TextDecoder and chardet use, and Node accepts it too.
 
                 ...rules
             }

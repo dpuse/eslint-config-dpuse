@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.121",
+    "version": "1.0.122",
     "private": false,
     "description": "Common ESLint configuration used in most DPUse projects.",
     "license": "MIT",
@@ -71,7 +71,7 @@
         "typescript-eslint": "^8.70.1"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.721",
+        "@dpuse/dpuse-development": "^0.3.722",
         "@types/eslint-plugin-security": "^3.0.1",
         "@types/node": "^26.6.2",
         "eslint": "^10.11.0",
