@@ -71,15 +71,11 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
         pluginUnicorn.configs.recommended,
         skipFormatting,
 
-        // Rule overrides.
+        // Rule overrides. Not limited to 'files', because the plugins above apply to every linted file, so without this a
+        // file outside 'files' (e.g. a '.mjs' script) would get the plugin defaults instead of the DPUse settings.
         {
-            files,
             rules: {
                 'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
-
-                // A leading underscore marks a binding that exists only to be discarded, such as the key omitted by a
-                // destructuring rest.
-                '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
 
                 '@eslint-community/eslint-comments/require-description': 'warn',
 
@@ -102,7 +98,17 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 'unicorn/no-null': 'off', // Null is required for JSON interop.
                 'unicorn/single-line-block-comment-style': 'off', // Prefer compact single line when appropriate.
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
-                'unicorn/text-encoding-identifier-case': ['error', { withDash: true }], // 'utf-8' is the standard name TextDecoder and chardet use, and Node accepts it too.
+                'unicorn/text-encoding-identifier-case': ['error', { withDash: true }] // 'utf-8' is the standard name TextDecoder and chardet use, and Node accepts it too.
+            }
+        },
+
+        // TypeScript and project rule overrides. Limited to 'files', where the TypeScript plugin is set up.
+        {
+            files,
+            rules: {
+                // A leading underscore marks a binding that exists only to be discarded, such as the key omitted by a
+                // destructuring rest.
+                '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
 
                 ...rules
             }
