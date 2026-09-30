@@ -1,8 +1,8 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.123",
+    "version": "1.0.124",
     "private": false,
-    "description": "Common ESLint configuration used in most DPUse projects.",
+    "description": "Common ESLint configuration used across DPUse projects.",
     "license": "MIT",
     "author": "Jonathan Terrell <terrell.jm@gmail.com>",
     "type": "module",
@@ -42,18 +42,13 @@
     "scripts": {
         "audit": "node -e \"import('@dpuse/dpuse-development').then(m => m.auditDependencies())\"",
         "build": "tsc -p tsconfig.build.json",
-        "check": "node -e \"import('@dpuse/dpuse-development').then(m => m.checkConfigFiles())\" && node -e \"import('@dpuse/dpuse-development').then(m => m.checkDependencies())\"",
-        "document": "npm run documentOpening && npm run documentUsage && npm run documentDependencies && npm run documentGovernance",
-        "documentDependencies": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentDependencies(''))\"",
-        "documentGovernance": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentGovernance())\"",
-        "documentOpening": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentOpening())\"",
-        "documentUsage": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentUsage())\"",
+        "check": "node -e \"import('@dpuse/dpuse-development').then(m => m.checkProject())\"",
+        "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentProject(''))\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
-        "release": "npm run sync && gh release create \"v$(npm pkg get version | tr -d '\"')\" --target \"$(git rev-parse HEAD)\" --generate-notes --latest",
+        "release": "npm run build && npm run document && npm run sync && gh release create \"v$(npm pkg get version | tr -d '\"')\" --target \"$(git rev-parse HEAD)\" --generate-notes --latest",
         "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
-        "test:e2e": "echo \"❌ 'test:e2e' command not implemented.\"",
-        "test:unit": "echo \"❌ 'test:unit' command not implemented.\""
+        "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\""
     },
     "peerDependencies": {
         "eslint": "^10.11.0"
@@ -63,20 +58,20 @@
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-import-x": "^4.17.1",
-        "eslint-plugin-n": "^18.3.0",
+        "eslint-plugin-n": "^18.4.0",
         "eslint-plugin-regexp": "^3.3.1",
-        "eslint-plugin-security": "^4.0.1",
-        "eslint-plugin-sonarjs": "^4.2.1",
+        "eslint-plugin-security": "^4.1.0",
+        "eslint-plugin-sonarjs": "^4.2.2",
         "eslint-plugin-unicorn": "^76.0.0",
-        "typescript-eslint": "^8.70.1"
+        "typescript-eslint": "^8.71.0"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.722",
+        "@dpuse/dpuse-development": "^0.3.796",
         "@types/eslint-plugin-security": "^3.0.1",
-        "@types/node": "^26.6.2",
+        "@types/node": "^26.6.3",
         "eslint": "^10.11.0",
         "prettier": "^3.9.9",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.70.1"
+        "typescript-eslint": "^8.71.0"
     }
 }
