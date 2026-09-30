@@ -1,11 +1,9 @@
 {
     "id": "eslint-config-dpuse",
     "description": {
-        "en": [
-            "Common ESLint configuration used in most DPUse projects."
-        ]
+        "en": []
     },
-    "version": "1.0.124",
+    "version": "1.0.125",
     "icon": null,
     "iconDark": null
 }

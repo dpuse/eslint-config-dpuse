@@ -1,8 +1,5 @@
 # DPUse ESLint Configuration
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse.svg)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
-
 <!-- OPENING_START -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
@@ -25,10 +22,6 @@ DPUse (Data Positioning & Use) is an in-browser application that positions your 
 **Publishing** uses a library of [Presenters](https://www.dpuse.app) to render standard [Presentations](https://www.dpuse.app) immediately using the contextualised data; additionally, [Cookbooks](https://www.dpuse.app) of [Recipes](https://www.dpuse.app) let you build Data Apps using your preferred tools.
 
 In addition, DPUse provides [Tools](https://www.dpuse.app) used by the application, and you can use them to construct connectors and presenters.
-
-## Introduction
-
-Common ESLint configuration used in most DPUse projects.
 
 <!-- OPENING_END -->
 
@@ -67,10 +60,6 @@ This repository is managed using the common set of actions provided by [@dpuse/d
 > Dependency licenses are not documented here: @dpuse/eslint-config-dpuse is a development-only tool and is never part of a production release.
 
 <!-- DEPENDENCY_LICENSES_END -->
-
-<!-- DEPENDENCY_TREE_START -->
-
-<!-- DEPENDENCY_TREE_END -->
 
 <!-- QUALITY_SECURITY_START -->
 
