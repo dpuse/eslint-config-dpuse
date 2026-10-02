@@ -46,7 +46,7 @@
         "document": "node -e \"import('@dpuse/dpuse-development').then(m => m.documentProject(''))\"",
         "format": "node -e \"import('@dpuse/dpuse-development').then(m => m.formatCode())\"",
         "lint": "node -e \"import('@dpuse/dpuse-development').then(m => m.lintCode())\"",
-        "release": "npm run build && npm run document && npm run sync && gh release create \"v$(npm pkg get version | tr -d '\"')\" --target \"$(git rev-parse HEAD)\" --generate-notes --latest",
+        "release": "npm run build && npm run document && npm run sync && node -e \"import('@dpuse/dpuse-development').then(m => m.triggerGitHubRelease())\"",
         "sync": "node -e \"import('@dpuse/dpuse-development').then(m => m.syncProjectWithGitHub())\"",
         "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\""
     },
@@ -66,7 +66,7 @@
         "typescript-eslint": "^8.71.0"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.796",
+        "@dpuse/dpuse-development": "^0.3.816",
         "@types/eslint-plugin-security": "^3.0.1",
         "@types/node": "^26.6.3",
         "eslint": "^10.11.0",
