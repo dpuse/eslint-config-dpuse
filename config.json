@@ -1,7 +1,7 @@
 {
     "id": "eslint-config-dpuse",
     "description": {},
-    "version": "1.0.125",
     "icon": null,
-    "iconDark": null
+    "iconDark": null,
+    "version": "1.0.126"
 }

@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.125",
+    "version": "1.0.126",
     "private": false,
     "description": "Common ESLint configuration used across DPUse projects.",
     "license": "MIT",
@@ -60,7 +60,7 @@
         "eslint-plugin-import-x": "^4.17.1",
         "eslint-plugin-n": "^18.4.0",
         "eslint-plugin-regexp": "^3.3.1",
-        "eslint-plugin-security": "^4.1.0",
+        "eslint-plugin-security": "^4.2.0",
         "eslint-plugin-sonarjs": "^4.2.2",
         "eslint-plugin-unicorn": "^76.0.0",
         "typescript-eslint": "^8.71.0"
@@ -68,7 +68,7 @@
     "devDependencies": {
         "@dpuse/dpuse-development": "^0.3.816",
         "@types/eslint-plugin-security": "^3.0.1",
-        "@types/node": "^26.6.3",
+        "@types/node": "^26.6.4",
         "eslint": "^10.11.0",
         "prettier": "^3.9.9",
         "typescript": "^6.0.3",
