@@ -95,6 +95,7 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                     }
                 ],
                 'unicorn/filename-case': ['error', { cases: { camelCase: true, pascalCase: true } }],
+                'unicorn/no-asterisk-prefix-in-documentation-comments': 'off', // VS Code adds the ' * ' prefix, and TypeScript drops it when reading the comment.
                 'unicorn/no-null': 'off', // Null is required for JSON interop.
                 'unicorn/single-line-block-comment-style': 'off', // Prefer compact single line when appropriate.
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
