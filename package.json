@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.134",
+    "version": "1.0.135",
     "private": false,
     "description": "Common ESLint configuration used across DPUse projects.",
     "license": "MIT",
