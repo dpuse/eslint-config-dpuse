@@ -76,7 +76,19 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 // Checks doc comments agree with the code they describe, without requiring one on every function. The
                 // TypeScript flavour forbids types in doc comments, which plain JavaScript files rely on, so it stops at
                 // TypeScript.
-                { ...pluginJSDoc.configs['flat/logical-typescript'], ignores: NON_TYPESCRIPT_FILES },
+                {
+                    ...pluginJSDoc.configs['flat/logical-typescript'],
+                    ignores: NON_TYPESCRIPT_FILES,
+                    rules: {
+                        ...pluginJSDoc.configs['flat/logical-typescript'].rules,
+                        // Setting 'ignore' replaces the defaults, so they are listed again. 'vite-ignore' is added because
+                        // '/* @vite-ignore */' is an instruction to Vite, not a doc comment missing its second asterisk.
+                        'jsdoc/no-bad-blocks': [
+                            'warn',
+                            { ignore: ['ts-check', 'ts-expect-error', 'ts-ignore', 'ts-nocheck', 'license', 'license-end', 'licstart', 'licend', 'source', 'vite-ignore'] }
+                        ]
+                    }
+                },
                 {
                     plugins: { n: pluginN },
                     rules: {

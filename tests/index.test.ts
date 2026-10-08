@@ -66,6 +66,11 @@ describe('dpuseESLintConfig', () => {
         expect(scriptConfig.rules?.['jsdoc/check-param-names']).toBeUndefined();
     });
 
+    it("does not mistake Vite's '@vite-ignore' comment for a doc comment", async () => {
+        const [result] = await eslint.lintText('export const loadModule = async (url: string): Promise<unknown> => import(/* @vite-ignore */ url);\n', { filePath: 'src/conventions.ts' });
+        expect(result?.messages.filter(({ ruleId }) => ruleId === 'jsdoc/no-bad-blocks')).toEqual([]);
+    });
+
     it('lints Markdown files, allowing GitHub alert boxes', async () => {
         const [result] = await eslint.lintText('# Title\n\n> [!WARNING]\n> Careful.\n\n[missing][nowhere]\n', { filePath: 'README.md' });
         expect(result?.messages.map(({ ruleId }) => ruleId)).toEqual(['markdown/no-missing-label-refs']);
