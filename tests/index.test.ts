@@ -53,6 +53,13 @@ describe('dpuseESLintConfig', () => {
         expect(config.rules?.['@typescript-eslint/no-unused-vars']).toBeUndefined();
     });
 
+    it('applies no JavaScript rules to files in other languages', async () => {
+        // A project linting CSS adds its own block for it; an empty one stands in, so ESLint treats the file as linted.
+        const withCSS = new ESLint({ cwd: FIXTURE_DIRECTORY, overrideConfig: [...dpuseESLintConfig({}), { files: ['**/*.css'] }], overrideConfigFile: true });
+        const config = (await withCSS.calculateConfigForFile('src/styles.css')) as ESLint.ConfigData;
+        expect(Object.keys(config.rules ?? {})).toEqual([]);
+    });
+
     it('ignores the standard build and report directories, plus any extra ignores', async () => {
         const extended = createESLint({ ignores: ['generated/**'] });
         for (const filePath of ['bundle-analysis-reports/x.js', 'dist/x.js', 'generated/x.ts', 'licenses/x.js']) {

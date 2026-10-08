@@ -3,7 +3,7 @@
 <!-- OPENING_START -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse?color=cb3837&label=npm)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
+[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse?label=npm)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
 [![CI](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml/badge.svg)](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml)
 
 Common ESLint configuration used across DPUse projects.

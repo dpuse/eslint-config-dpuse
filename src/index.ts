@@ -35,6 +35,10 @@ export interface DPUseESLintConfigOptions extends Omit<DPUseBaseESLintConfigOpti
     tsconfigRootDir?: string;
 }
 
+// ── Constants ────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+const CODE_FILES = ['**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'];
+
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 
 /** The rules, plugins, and ignores shared by every DPUse project, TypeScript or otherwise (e.g. dpuse-app's Vue setup). */
@@ -45,35 +49,37 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
         // Ignores.
         globalIgnores(['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**', ...ignores]),
 
-        // Plugin configurations.
+        // Plugin configurations and rule overrides. Limited to code files rather than 'files', so a script outside 'files'
+        // (e.g. a '.mjs' script) still gets the DPUse settings, while a file in another language (e.g. '.css') gets none of
+        // these JavaScript rules, which ESLint refuses to run on it.
         {
-            // '@eslint-community/eslint-comments' only ships a legacy config; manually convert to flat format.
-            plugins: { '@eslint-community/eslint-comments': pluginComments },
-            rules: {
-                '@eslint-community/eslint-comments/disable-enable-pair': 'error',
-                '@eslint-community/eslint-comments/no-aggregating-enable': 'error',
-                '@eslint-community/eslint-comments/no-duplicate-disable': 'error',
-                '@eslint-community/eslint-comments/no-unlimited-disable': 'error',
-                '@eslint-community/eslint-comments/no-unused-enable': 'error'
-            }
-        },
-        pluginImportFlatConfigs.recommended,
-        {
-            plugins: { n: pluginN },
-            rules: {
-                'n/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
-                'n/no-unsupported-features/node-builtins': 'error'
-            }
-        },
-        pluginRegexpConfigs['flat/recommended'],
-        pluginSecurity.configs.recommended,
-        pluginSonarJS.configs.recommended,
-        pluginUnicorn.configs.recommended,
-        skipFormatting,
-
-        // Rule overrides. Not limited to 'files', because the plugins above apply to every linted file, so without this a
-        // file outside 'files' (e.g. a '.mjs' script) would get the plugin defaults instead of the DPUse settings.
-        {
+            files: CODE_FILES,
+            extends: [
+                {
+                    // '@eslint-community/eslint-comments' only ships a legacy config; manually convert to flat format.
+                    plugins: { '@eslint-community/eslint-comments': pluginComments },
+                    rules: {
+                        '@eslint-community/eslint-comments/disable-enable-pair': 'error',
+                        '@eslint-community/eslint-comments/no-aggregating-enable': 'error',
+                        '@eslint-community/eslint-comments/no-duplicate-disable': 'error',
+                        '@eslint-community/eslint-comments/no-unlimited-disable': 'error',
+                        '@eslint-community/eslint-comments/no-unused-enable': 'error'
+                    }
+                },
+                pluginImportFlatConfigs.recommended,
+                {
+                    plugins: { n: pluginN },
+                    rules: {
+                        'n/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
+                        'n/no-unsupported-features/node-builtins': 'error'
+                    }
+                },
+                pluginRegexpConfigs['flat/recommended'],
+                pluginSecurity.configs.recommended,
+                pluginSonarJS.configs.recommended,
+                pluginUnicorn.configs.recommended,
+                skipFormatting
+            ],
             rules: {
                 'sort-imports': ['warn', { allowSeparatedGroups: true, ignoreCase: true, memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'] }],
 
