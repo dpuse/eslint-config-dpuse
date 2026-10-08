@@ -53,6 +53,28 @@ describe('dpuseESLintConfig', () => {
         expect(config.rules?.['@typescript-eslint/no-unused-vars']).toBeUndefined();
     });
 
+    it("turns on ESLint's recommended rules without undoing the TypeScript ones", async () => {
+        const config = (await eslint.calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
+        expect(config.rules?.['no-debugger']?.[0]).toBe(2);
+        expect(config.rules?.['no-undef']?.[0]).toBe(0); // TypeScript reports undefined names itself.
+    });
+
+    it('checks doc comments in TypeScript files only', async () => {
+        const typeScriptConfig = (await eslint.calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
+        const scriptConfig = (await eslint.calculateConfigForFile('scripts/tool.mjs')) as ESLint.ConfigData;
+        expect(typeScriptConfig.rules?.['jsdoc/check-param-names']?.[0]).toBe(1);
+        expect(scriptConfig.rules?.['jsdoc/check-param-names']).toBeUndefined();
+    });
+
+    it('lints Markdown files, allowing GitHub alert boxes', async () => {
+        const [result] = await eslint.lintText('# Title\n\n> [!WARNING]\n> Careful.\n\n[missing][nowhere]\n', { filePath: 'README.md' });
+        expect(result?.messages.map(({ ruleId }) => ruleId)).toEqual(['markdown/no-missing-label-refs']);
+    });
+
+    it("lints no TypeScript file that 'files' leaves out", async () => {
+        expect(await eslint.calculateConfigForFile('scripts/tool.ts')).toBeUndefined();
+    });
+
     it('applies no JavaScript rules to files in other languages', async () => {
         // A project linting CSS adds its own block for it; an empty one stands in, so ESLint treats the file as linted.
         const withCSS = new ESLint({ cwd: FIXTURE_DIRECTORY, overrideConfig: [...dpuseESLintConfig({}), { files: ['**/*.css'] }], overrideConfigFile: true });

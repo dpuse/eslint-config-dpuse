@@ -2,6 +2,9 @@
 import type { Linter } from 'eslint';
 import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
+import pluginJS from '@eslint/js';
+import pluginJSDoc from 'eslint-plugin-jsdoc';
+import pluginMarkdown from '@eslint/markdown';
 import pluginN from 'eslint-plugin-n';
 import { configs as pluginRegexpConfigs } from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
@@ -37,7 +40,10 @@ export interface DPUseESLintConfigOptions extends Omit<DPUseBaseESLintConfigOpti
 
 // ── Constants ────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-const CODE_FILES = ['**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'];
+// Everything except code files, for 'ignores'. A block limited this way, rather than by 'files', keeps its rules off
+// other languages without also telling ESLint to lint code files that the project's 'files' leave out.
+const NON_CODE_FILES = ['**/*', '!**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'];
+const NON_TYPESCRIPT_FILES = ['**/*', '!**/*.{cts,mts,ts,tsx,vue}'];
 
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -53,7 +59,7 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
         // (e.g. a '.mjs' script) still gets the DPUse settings, while a file in another language (e.g. '.css') gets none of
         // these JavaScript rules, which ESLint refuses to run on it.
         {
-            files: CODE_FILES,
+            ignores: NON_CODE_FILES,
             extends: [
                 {
                     // '@eslint-community/eslint-comments' only ships a legacy config; manually convert to flat format.
@@ -67,6 +73,10 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                     }
                 },
                 pluginImportFlatConfigs.recommended,
+                // Checks doc comments agree with the code they describe, without requiring one on every function. The
+                // TypeScript flavour forbids types in doc comments, which plain JavaScript files rely on, so it stops at
+                // TypeScript.
+                { ...pluginJSDoc.configs['flat/logical-typescript'], ignores: NON_TYPESCRIPT_FILES },
                 {
                     plugins: { n: pluginN },
                     rules: {
@@ -109,6 +119,21 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
             }
         },
 
+        // Markdown files, such as each project's README. GitHub-flavoured, because that is where the READMEs are read. Front
+        // matter is the YAML block the knowledge-base pages open with, which would otherwise be read as Markdown.
+        {
+            files: ['**/*.md'],
+            extends: [pluginMarkdown.configs.recommended],
+            language: 'markdown/gfm',
+            languageOptions: { frontmatter: 'yaml' },
+            rules: {
+                // GitHub alert boxes ('> [!WARNING]') look like links to a label that is never defined.
+                'markdown/no-missing-label-refs': ['error', { allowLabels: ['!CAUTION', '!IMPORTANT', '!NOTE', '!TIP', '!WARNING'] }],
+                // A front matter 'title' names the browser tab, not a heading on the page, so a page may still open with '#'.
+                'markdown/no-multiple-h1': ['error', { frontmatterTitle: '' }]
+            }
+        },
+
         // TypeScript and project rule overrides. Limited to 'files', where the TypeScript plugin is set up.
         {
             files,
@@ -134,6 +159,9 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
     } = options;
 
     return defineConfig(
+        // ESLint's own recommended rules. Before the TypeScript configs, which switch off the ones TypeScript checks better.
+        { ignores: NON_CODE_FILES, extends: [pluginJS.configs.recommended] },
+
         // Linting scope, strict TypeScript type-checking, and module resolver.
         {
             files,
