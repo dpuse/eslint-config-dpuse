@@ -115,6 +115,13 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
 
                 'sonarjs/todo-tag': 'warn',
 
+                'unicorn/consistent-boolean-name': [
+                    'error',
+                    {
+                        // DPUse convention: a boolean may lead with its subject, then the verb (viewportIsWide, viewportNeedsTopEdgeLine).
+                        ignore: ['^[a-z]+(Is|Are|Has|Have|Can|Should|Was|Were|Did|Will|Requires|Needs)[A-Z]']
+                    }
+                ],
                 'unicorn/consistent-class-member-order': [
                     'error',
                     {
