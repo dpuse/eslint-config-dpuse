@@ -68,10 +68,11 @@ This section is updated each time `npm run document` is run. Settings come from 
 
 ### Testing
 
-| Check                | Status | What it does                                                                                                                                                                                 |
-| :------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unit tests           | ✅ On  | [Vitest](https://vitest.dev) runs the unit tests. Part of the [CI workflow](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml) on every push and pull request to `main`. |
-| Property-based tests | ❌ Off | [fast-check](https://fast-check.dev) runs many random inputs per test to find edge cases, alongside the unit tests.                                                                          |
+| Check                | Status | What it does                                                                                                                                                                                                                                                                                                  |
+| :------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Unit tests           | ✅ On  | [Vitest](https://vitest.dev) runs the unit tests. Part of the [CI workflow](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml) on every push and pull request to `main`.                                                                                                                  |
+| Property-based tests | ❌ Off | [fast-check](https://fast-check.dev) runs many random inputs per test to find edge cases, alongside the unit tests.                                                                                                                                                                                           |
+| Test coverage        | ✅ On  | ![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdpuse%2Feslint-config-dpuse%2Fmain%2Fcode-health-reports%2Fvitest%2Fbadge.json) [Vitest's V8 coverage](https://vitest.dev/guide/coverage) measures the share of source lines the unit tests run. The target is 80%. |
 
 ### Code Quality
 

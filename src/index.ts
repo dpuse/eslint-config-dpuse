@@ -153,6 +153,13 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
             }
         },
 
+        // Presenter presentations use micromark directives ('::note[Text]'), whose bracketed text the Markdown plugin reads
+        // as a link to a label that is never defined.
+        {
+            files: ['src/presentations/**/*.md'],
+            rules: { 'markdown/no-missing-label-refs': 'off' }
+        },
+
         // TypeScript and project rule overrides. Limited to 'files', where the TypeScript plugin is set up.
         {
             files,

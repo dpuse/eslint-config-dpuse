@@ -76,6 +76,11 @@ describe('dpuseESLintConfig', () => {
         expect(result?.messages.map(({ ruleId }) => ruleId)).toEqual(['markdown/no-missing-label-refs']);
     });
 
+    it('allows micromark directives in presenter presentations', async () => {
+        const [result] = await eslint.lintText('# Title\n\n::note[Remember to save.]\n', { filePath: 'src/presentations/hr/headcount.md' });
+        expect(result?.messages).toEqual([]);
+    });
+
     it("lints no TypeScript file that 'files' leaves out", async () => {
         expect(await eslint.calculateConfigForFile('scripts/tool.ts')).toBeUndefined();
     });
