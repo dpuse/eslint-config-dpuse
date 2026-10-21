@@ -1,4 +1,5 @@
 // ── External Dependencies & Registrations
+import globals from 'globals';
 import type { Linter } from 'eslint';
 import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
@@ -187,6 +188,10 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
     return defineConfig(
         // ESLint's own recommended rules. Before the TypeScript configs, which switch off the ones TypeScript checks better.
         { ignores: NON_CODE_FILES, extends: [pluginJS.configs.recommended] },
+
+        // Plain JavaScript files in DPUse projects are Node scripts, so their Node globals ('console', 'process') are
+        // declared. TypeScript files need none, because TypeScript checks names itself.
+        { files: ['**/*.{cjs,js,mjs}'], languageOptions: { globals: globals.node } },
 
         // Linting scope, strict TypeScript type-checking, and module resolver.
         {
