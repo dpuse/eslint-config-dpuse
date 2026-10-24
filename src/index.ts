@@ -5,7 +5,6 @@ import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
 import pluginJS from '@eslint/js';
 import pluginJSDoc from 'eslint-plugin-jsdoc';
-import pluginMarkdown from '@eslint/markdown';
 import pluginN from 'eslint-plugin-n';
 import { configs as pluginRegexpConfigs } from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
@@ -137,28 +136,6 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 'unicorn/switch-case-braces': ['warn', 'avoid'],
                 'unicorn/text-encoding-identifier-case': ['error', { withDash: true }] // 'utf-8' is the standard name TextDecoder and chardet use, and Node accepts it too.
             }
-        },
-
-        // Markdown files, such as each project's README. GitHub-flavoured, because that is where the READMEs are read. Front
-        // matter is the YAML block the knowledge-base pages open with, which would otherwise be read as Markdown.
-        {
-            files: ['**/*.md'],
-            extends: [pluginMarkdown.configs.recommended],
-            language: 'markdown/gfm',
-            languageOptions: { frontmatter: 'yaml' },
-            rules: {
-                // GitHub alert boxes ('> [!WARNING]') look like links to a label that is never defined.
-                'markdown/no-missing-label-refs': ['error', { allowLabels: ['!CAUTION', '!IMPORTANT', '!NOTE', '!TIP', '!WARNING'] }],
-                // A front matter 'title' names the browser tab, not a heading on the page, so a page may still open with '#'.
-                'markdown/no-multiple-h1': ['error', { frontmatterTitle: '' }]
-            }
-        },
-
-        // Presenter presentations use micromark directives ('::note[Text]'), whose bracketed text the Markdown plugin reads
-        // as a link to a label that is never defined.
-        {
-            files: ['src/presentations/**/*.md'],
-            rules: { 'markdown/no-missing-label-refs': 'off' }
         },
 
         // TypeScript and project rule overrides. Limited to 'files', where the TypeScript plugin is set up.
