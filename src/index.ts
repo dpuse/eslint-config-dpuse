@@ -107,6 +107,8 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
 
                 '@eslint-community/eslint-comments/require-description': 'warn',
 
+                'import-x/no-duplicates': 'off', // A long import list is split into several one-line imports from the same module, rather than wrapped.
+
                 'security/detect-object-injection': 'off', // Generates too many false positives.
 
                 'sonarjs/no-commented-code': 'warn',
