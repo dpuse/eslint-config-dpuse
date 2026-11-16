@@ -148,6 +148,8 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 // destructuring rest.
                 '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', caughtErrorsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
 
+                '@typescript-eslint/no-unsafe-class-instance-assignment': 'off', // Off until typescript-eslint fixes it. In 8.73.0 it overflows the stack on Vite and Rolldown plugin types.
+
                 ...rules
             }
         }

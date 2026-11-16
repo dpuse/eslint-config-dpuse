@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/eslint-config-dpuse",
-    "version": "1.0.150",
+    "version": "1.0.151",
     "private": false,
     "description": "Common ESLint configuration used across DPUse projects.",
     "license": "MIT",
@@ -52,7 +52,7 @@
         "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\""
     },
     "peerDependencies": {
-        "eslint": "^10.14.0"
+        "eslint": "^10.15.0"
     },
     "dependencies": {
         "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
@@ -60,24 +60,24 @@
         "eslint-config-prettier": "^10.1.8",
         "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-import-x": "^4.18.1",
-        "eslint-plugin-jsdoc": "^65.4.5",
+        "eslint-plugin-jsdoc": "^65.4.9",
         "eslint-plugin-n": "^18.5.0",
         "eslint-plugin-regexp": "^3.3.3",
         "eslint-plugin-security": "^4.2.1",
         "eslint-plugin-sonarjs": "^4.2.2",
-        "eslint-plugin-unicorn": "^79.0.0",
+        "eslint-plugin-unicorn": "^80.0.0",
         "globals": "^17.14.0",
-        "typescript-eslint": "^8.72.1"
+        "typescript-eslint": "^8.73.0"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^1.0.153",
+        "@dpuse/dpuse-development": "^1.0.155",
         "@types/eslint-plugin-security": "^3.0.1",
         "@types/node": "^26.6.6",
         "@vitest/coverage-v8": "^5.1.0",
-        "eslint": "^10.14.0",
-        "prettier": "^3.9.10",
+        "eslint": "^10.15.0",
+        "prettier": "^3.10.1",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.72.1",
+        "typescript-eslint": "^8.73.0",
         "vitest": "^5.1.0"
     }
 }
