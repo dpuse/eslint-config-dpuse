@@ -8,6 +8,8 @@
 
 Common ESLint configuration used across DPUse projects.
 
+**Release candidate.** See [Release Status](#release-status).
+
 [Report a Vulnerability](https://github.com/dpuse/eslint-config-dpuse/security/advisories/new) · [Open an Issue](https://github.com/dpuse/eslint-config-dpuse/issues)
 
 ## About DPUse
@@ -37,7 +39,7 @@ npm install -D @dpuse/eslint-config-dpuse eslint
 _Requires [Node.js](https://nodejs.org/) 24 or later, [npm](https://www.npmjs.com/) 12 or later, and `eslint` 10.15.0 or later as a peer dependency._
 
 > [!WARNING]
-> This project is not designed for general use. It is custom built for the DPUse CI/CD process. You are welcome to clone and customise it for your own purposes, but you will need to adapt it to your own project structure and tooling.
+> Built for DPUse projects and their conventions. You are welcome to use or adapt it, but it may change without notice to suit DPUse.
 
 To work on the source instead, clone this repository.
 
@@ -50,6 +52,14 @@ npm install
 _Working on the source also requires [TypeScript](https://www.typescriptlang.org/) 6.0.3 or a later 6.0 release. Later versions, including TypeScript 7, are not supported yet._
 
 This repository is managed using the common set of actions provided by [@dpuse/dpuse-development](https://github.com/dpuse/dpuse-development). See the `scripts` block in [package.json](https://github.com/dpuse/eslint-config-dpuse/blob/main/package.json) for details.
+
+### Release Status
+
+DPUse is a new product, and this package is a release candidate: complete and in use across DPUse, but not yet at its first stable release.
+
+Each release increases the last number of the version, for example from 1.0.164 to 1.0.165. Until the first stable release, any release may include changes that need updates in the projects that use it, so depend on an exact version to avoid unexpected changes. Once stable, versions will follow [Semantic Versioning](https://semver.org): breaking changes in the first number, new features in the second and fixes in the last.
+
+Every release is listed on the [Releases](https://github.com/dpuse/eslint-config-dpuse/releases) page.
 
 <!-- USAGE_END -->
 
@@ -136,10 +146,10 @@ This section is updated each time `npm run document` is run. Settings come from 
 
 ### Code Quality
 
-| Check         | Status | What it does                                                                                                                                                                                                           |
-| :------------ | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Code analysis | ❌ Off | [SonarCloud](https://sonarcloud.io) checks every push for bugs, code smells and vulnerabilities.                                                                                                                       |
-| Linting       | ✅ On  | [ESLint](https://eslint.org) checks the code for errors and style problems. Part of the [CI workflow](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml) on every push and pull request to `main`. |
+| Check         | Status | What it does                                                                                                                                                                                                                                                                                                         |
+| :------------ | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Code analysis | ❌ Off | [SonarCloud](https://sonarcloud.io) checks every push for bugs, code smells and vulnerabilities.                                                                                                                                                                                                                     |
+| Linting       | ✅ On  | [ESLint](https://eslint.org) checks the code for errors and style problems, and the [TypeScript](https://www.typescriptlang.org/) compiler type-checks the whole project. Part of the [CI workflow](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml) on every push and pull request to `main`. |
 
 ### Security Analysis
 
