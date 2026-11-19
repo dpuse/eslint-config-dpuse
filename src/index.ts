@@ -4,11 +4,8 @@ import type { Linter } from 'eslint';
 import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
 import pluginJS from '@eslint/js';
-import pluginJSDoc from 'eslint-plugin-jsdoc';
 import pluginN from 'eslint-plugin-n';
 import { configs as pluginRegexpConfigs } from 'eslint-plugin-regexp';
-import pluginSecurity from 'eslint-plugin-security';
-import pluginSonarJS from 'eslint-plugin-sonarjs';
 import pluginUnicorn from 'eslint-plugin-unicorn';
 import skipFormatting from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
@@ -43,7 +40,6 @@ export interface DPUseESLintConfigOptions extends Omit<DPUseBaseESLintConfigOpti
 // Everything except code files, for 'ignores'. A block limited this way, rather than by 'files', keeps its rules off
 // other languages without also telling ESLint to lint code files that the project's 'files' leave out.
 const NON_CODE_FILES = ['**/*', '!**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'];
-const NON_TYPESCRIPT_FILES = ['**/*', '!**/*.{cts,mts,ts,tsx,vue}'];
 
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -73,22 +69,6 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                     }
                 },
                 pluginImportFlatConfigs.recommended,
-                // Checks doc comments agree with the code they describe, without requiring one on every function. The
-                // TypeScript flavour forbids types in doc comments, which plain JavaScript files rely on, so it stops at
-                // TypeScript.
-                {
-                    ...pluginJSDoc.configs['flat/logical-typescript'],
-                    ignores: NON_TYPESCRIPT_FILES,
-                    rules: {
-                        ...pluginJSDoc.configs['flat/logical-typescript'].rules,
-                        // Setting 'ignore' replaces the defaults, so they are listed again. 'vite-ignore' is added because
-                        // '/* @vite-ignore */' is an instruction to Vite, not a doc comment missing its second asterisk.
-                        'jsdoc/no-bad-blocks': [
-                            'warn',
-                            { ignore: ['ts-check', 'ts-expect-error', 'ts-ignore', 'ts-nocheck', 'license', 'license-end', 'licstart', 'licend', 'source', 'vite-ignore'] }
-                        ]
-                    }
-                },
                 {
                     plugins: { n: pluginN },
                     rules: {
@@ -97,8 +77,6 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                     }
                 },
                 pluginRegexpConfigs['flat/recommended'],
-                pluginSecurity.configs.recommended,
-                pluginSonarJS.configs.recommended,
                 pluginUnicorn.configs.recommended,
                 skipFormatting
             ],
@@ -108,14 +86,6 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 '@eslint-community/eslint-comments/require-description': 'warn',
 
                 'import-x/no-duplicates': 'off', // A long import list is split into several one-line imports from the same module, rather than wrapped.
-
-                'security/detect-object-injection': 'off', // Generates too many false positives.
-
-                'sonarjs/no-commented-code': 'warn',
-                'sonarjs/no-dead-store': 'warn',
-                'sonarjs/no-unused-vars': 'off', // Duplicates '@typescript-eslint/no-unused-vars', but ignores no naming convention.
-
-                'sonarjs/todo-tag': 'warn',
 
                 'unicorn/consistent-boolean-name': [
                     'error',

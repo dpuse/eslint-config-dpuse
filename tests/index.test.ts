@@ -64,20 +64,6 @@ describe('dpuseESLintConfig', () => {
         expect(result?.messages.filter(({ ruleId }) => ruleId === 'no-undef')).toEqual([]);
     });
 
-    it('checks doc comments in TypeScript files only', async () => {
-        const typeScriptConfig = (await eslint.calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
-        const scriptConfig = (await eslint.calculateConfigForFile('scripts/tool.mjs')) as ESLint.ConfigData;
-        expect(typeScriptConfig.rules?.['jsdoc/check-param-names']?.[0]).toBe(1);
-        expect(scriptConfig.rules?.['jsdoc/check-param-names']).toBeUndefined();
-    });
-
-    it("does not mistake Vite's '@vite-ignore' comment for a doc comment", async () => {
-        const [result] = await eslint.lintText('export const loadModule = async (url: string): Promise<unknown> => import(/* @vite-ignore */ url);\n', {
-            filePath: 'src/conventions.ts'
-        });
-        expect(result?.messages.filter(({ ruleId }) => ruleId === 'jsdoc/no-bad-blocks')).toEqual([]);
-    });
-
     it("lints no TypeScript file that 'files' leaves out", async () => {
         expect(await eslint.calculateConfigForFile('scripts/tool.ts')).toBeUndefined();
     });
