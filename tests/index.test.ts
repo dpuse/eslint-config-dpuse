@@ -1,8 +1,11 @@
-import { dpuseESLintConfig } from '@/index.ts';
+// ── External Dependencies & Registrations
 import { ESLint } from 'eslint';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { beforeAll, describe, expect, it } from 'vitest';
+
+// ── Local Framework
+import { dpuseESLintConfig } from '@/index.ts';
 
 // ── Constants ────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -55,8 +58,8 @@ describe('dpuseESLintConfig', () => {
 
     it("turns on ESLint's recommended rules without undoing the TypeScript ones", async () => {
         const config = (await eslint.calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
-        expect(config.rules?.['no-debugger']?.[0]).toBe(2);
-        expect(config.rules?.['no-undef']?.[0]).toBe(0); // TypeScript reports undefined names itself.
+        expect(config.rules?.['no-debugger']).toEqual([2]);
+        expect(config.rules?.['no-undef']).toEqual([0, expect.anything()]); // TypeScript reports undefined names itself.
     });
 
     it('lets plain JavaScript scripts use Node globals', async () => {

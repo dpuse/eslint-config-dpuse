@@ -1,7 +1,7 @@
 // ── External Dependencies & Registrations
 import globals from 'globals';
 import type { Linter } from 'eslint';
-import pluginComments from '@eslint-community/eslint-plugin-eslint-comments';
+import { recommended as pluginCommentsRecommended } from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import { flatConfigs as pluginImportFlatConfigs } from 'eslint-plugin-import-x';
 import pluginJS from '@eslint/js';
 import pluginN from 'eslint-plugin-n';
@@ -13,7 +13,10 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 // ── Types ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-/** Options accepted by the shared DPUse base ESLint configuration, common to every DPUse project regardless of framework. */
+/**
+ * Options accepted by the shared DPUse base ESLint configuration, common to every DPUse project regardless of
+ * framework.
+ */
 export interface DPUseBaseESLintConfigOptions {
     /** Glob patterns for the files to lint. */
     files: string[];
@@ -29,9 +32,15 @@ export interface DPUseESLintConfigOptions extends Omit<DPUseBaseESLintConfigOpti
     files?: string[];
     /** Module specifiers that `import-x` should treat as resolvable core modules (e.g. `cloudflare:workers`). */
     importCoreModules?: string[];
-    /** Path to the consuming project's `tsconfig.json`. Defaults to `./tsconfig.json`, used by every DPUse project. */
+    /**
+     * Path to the consuming project's `tsconfig.json`, used by the import resolver. Defaults to `./tsconfig.json`, used
+     * by every DPUse project.
+     */
     tsconfigPath?: string;
-    /** The consuming project's root directory. Defaults to `process.cwd()`, correct as long as ESLint is run from the project root. */
+    /**
+     * The consuming project's root directory. Defaults to `process.cwd()`, correct as long as ESLint is run from the
+     * project root.
+     */
     tsconfigRootDir?: string;
 }
 
@@ -43,7 +52,10 @@ const NON_CODE_FILES = ['**/*', '!**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'];
 
 // ── ESLint Configuration ─────────────────────────────────────────────────────────────────────────────────────────────
 
-/** The rules, plugins, and ignores shared by every DPUse project, TypeScript or otherwise (e.g. dpuse-app's Vue setup). */
+/**
+ * The rules, plugins, and ignores shared by every DPUse project, TypeScript or otherwise (e.g. dpuse-app's Vue
+ * setup).
+ */
 export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Linter.Config[] {
     const { files, ignores = [], rules = {} } = options;
 
@@ -51,23 +63,13 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
         // Ignores.
         globalIgnores(['bundle-analysis-reports/**', 'dependency-check-bin/**', 'dependency-check-reports/**', 'dist/**', 'licenses/**', ...ignores]),
 
-        // Plugin configurations and rule overrides. Limited to code files rather than 'files', so a script outside 'files'
-        // (e.g. a '.mjs' script) still gets the DPUse settings, while a file in another language (e.g. '.css') gets none of
-        // these JavaScript rules, which ESLint refuses to run on it.
+        // Plugin configurations and rule overrides. Limited to code files rather than 'files', so a script outside
+        // 'files' (e.g. a '.mjs' script) still gets the DPUse settings, while a file in another language (e.g. '.css')
+        // gets none of these JavaScript rules, which ESLint refuses to run on it.
         {
             ignores: NON_CODE_FILES,
             extends: [
-                {
-                    // '@eslint-community/eslint-comments' only ships a legacy config; manually convert to flat format.
-                    plugins: { '@eslint-community/eslint-comments': pluginComments },
-                    rules: {
-                        '@eslint-community/eslint-comments/disable-enable-pair': 'error',
-                        '@eslint-community/eslint-comments/no-aggregating-enable': 'error',
-                        '@eslint-community/eslint-comments/no-duplicate-disable': 'error',
-                        '@eslint-community/eslint-comments/no-unlimited-disable': 'error',
-                        '@eslint-community/eslint-comments/no-unused-enable': 'error'
-                    }
-                },
+                pluginCommentsRecommended,
                 pluginImportFlatConfigs.recommended,
                 {
                     plugins: { n: pluginN },
@@ -90,14 +92,16 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
                 'unicorn/consistent-boolean-name': [
                     'error',
                     {
-                        // DPUse convention: a boolean may lead with its subject, then the verb (viewportIsWide, viewportNeedsTopEdgeLine).
+                        // DPUse convention: a boolean may lead with its subject, then the verb (viewportIsWide,
+                        // viewportNeedsTopEdgeLine).
                         ignore: ['^[a-z]+(Is|Are|Has|Have|Can|Should|Was|Were|Did|Will|Requires|Needs)[A-Z]']
                     }
                 ],
                 'unicorn/consistent-class-member-order': [
                     'error',
                     {
-                        // DPUse convention: private helpers are positioned after the public methods that use them, not before.
+                        // DPUse convention: private helpers are positioned after the public methods that use them, not
+                        // before.
                         order: ['static-field', 'static-block', 'static-method', 'private-field', 'public-field', 'constructor', 'public-method', 'private-method']
                     }
                 ],
@@ -126,6 +130,10 @@ export function dpuseBaseESLintConfig(options: DPUseBaseESLintConfigOptions): Li
     );
 }
 
+/**
+ * The full DPUse ESLint configuration for a TypeScript project: the base configuration plus type-aware TypeScript
+ * rules.
+ */
 export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Config[] {
     const {
         files = ['eslint.config.js', 'src/**/*.ts', 'tests/**/*.ts', 'vite.config.ts', 'vitest.config.ts'],
@@ -137,7 +145,8 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
     } = options;
 
     return defineConfig(
-        // ESLint's own recommended rules. Before the TypeScript configs, which switch off the ones TypeScript checks better.
+        // ESLint's own recommended rules. Before the TypeScript configs, which switch off the ones TypeScript checks
+        // better.
         { ignores: NON_CODE_FILES, extends: [pluginJS.configs.recommended] },
 
         // Plain JavaScript files in DPUse projects are Node scripts, so their Node globals ('console', 'process') are
@@ -149,7 +158,8 @@ export function dpuseESLintConfig(options: DPUseESLintConfigOptions): Linter.Con
             files,
             extends: [...tseslint.configs.strictTypeChecked, ...tseslint.configs.stylisticTypeChecked],
             languageOptions: {
-                parserOptions: { project: tsconfigPath, tsconfigRootDir: tsconfigRootDirectory }
+                // The project service type-checks each file with its nearest 'tsconfig.json', as the editor does.
+                parserOptions: { projectService: true, tsconfigRootDir: tsconfigRootDirectory }
             },
             settings: {
                 'import-x/core-modules': importCoreModules,
