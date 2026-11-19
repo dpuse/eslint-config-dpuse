@@ -31,8 +31,10 @@ In addition, DPUse provides [Tools](https://www.dpuse.app) used by the applicati
 This [package](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse) is available on [npm](https://www.npmjs.com/). Install it with:
 
 ```bash
-npm install @dpuse/eslint-config-dpuse
+npm install -D @dpuse/eslint-config-dpuse eslint
 ```
+
+_Requires [Node.js](https://nodejs.org/) 24 or later, [npm](https://www.npmjs.com/) 12 or later, and `eslint` 10.15.0 or later as a peer dependency._
 
 > [!WARNING]
 > This project is not designed for general use. It is custom built for the DPUse CI/CD process. You are welcome to clone and customise it for your own purposes, but you will need to adapt it to your own project structure and tooling.
@@ -45,11 +47,69 @@ cd eslint-config-dpuse
 npm install
 ```
 
-_Requires [Node.js](https://nodejs.org/) 24 or later, [npm](https://www.npmjs.com/) 12 or later, and [TypeScript](https://www.typescriptlang.org/) 6.0.3, TypeScript 7 is not supported as yet._
+_Working on the source also requires [TypeScript](https://www.typescriptlang.org/) 6.0.3 or a later 6.0 release. Later versions, including TypeScript 7, are not supported yet._
 
 This repository is managed using the common set of actions provided by [@dpuse/dpuse-development](https://github.com/dpuse/dpuse-development). See the `scripts` block in [package.json](https://github.com/dpuse/eslint-config-dpuse/blob/main/package.json) for details.
 
 <!-- USAGE_END -->
+
+## Configuration
+
+The package uses ESLint's flat configuration format and is published as an ES module. Create `eslint.config.js` in the project root:
+
+```js
+import { dpuseESLintConfig } from '@dpuse/eslint-config-dpuse';
+
+export default dpuseESLintConfig({
+    ignores: ['generated/**'],
+    importCoreModules: ['cloudflare:workers'],
+    rules: { 'unicorn/no-array-reduce': 'off' }
+});
+```
+
+Run ESLint from the project root, where it finds `tsconfig.json`.
+
+### Options
+
+| Option              | Default                                                                                      | What it does                                                                                        |
+| :------------------ | :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| `files`             | `['eslint.config.js', 'src/**/*.ts', 'tests/**/*.ts', 'vite.config.ts', 'vitest.config.ts']` | The files linted with the type-aware TypeScript rules.                                              |
+| `ignores`           | `[]`                                                                                         | Glob patterns to ignore, added to the folders that are always ignored.                              |
+| `rules`             | `{}`                                                                                         | Rule settings for the project. They are applied last, so they override the shared settings.         |
+| `importCoreModules` | `[]`                                                                                         | Module names the import rules treat as built in, such as `cloudflare:workers`.                      |
+| `tsconfigPath`      | `'./tsconfig.json'`                                                                          | The `tsconfig.json` the import resolver reads.                                                      |
+| `tsconfigRootDir`   | `process.cwd()`                                                                              | The project's root folder, where type-aware linting starts looking for each file's `tsconfig.json`. |
+
+A project that sets up its own TypeScript parser, such as a Vue project, uses `dpuseBaseESLintConfig({ files, ignores, rules })` instead. It adds the shared plugins, rule settings and ignores, but not the TypeScript rules. `files` is required.
+
+### What It Includes
+
+- [ESLint's recommended rules](https://eslint.org/docs/latest/rules/).
+- [typescript-eslint](https://typescript-eslint.io)'s `strict-type-checked` and `stylistic-type-checked` configurations. Type information comes from the project service, which checks each file with its nearest `tsconfig.json`, as the editor does.
+- The recommended configurations of [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn), [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x) (with the TypeScript resolver), [eslint-plugin-regexp](https://github.com/ota-meshi/eslint-plugin-regexp) and [@eslint-community/eslint-plugin-eslint-comments](https://github.com/eslint-community/eslint-plugin-eslint-comments).
+- [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)'s checks for syntax and built-in modules that the project's Node.js version does not support.
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier), which turns off the rules that conflict with Prettier.
+- Node.js globals, such as `console` and `process`, in plain JavaScript files (`.js`, `.cjs`, `.mjs`).
+
+The plugin rules also apply to JavaScript files outside `files`, such as `.mjs` scripts, but never to files in other languages, such as CSS. These folders are always ignored: `bundle-analysis-reports`, `dependency-check-bin`, `dependency-check-reports`, `dist` and `licenses`.
+
+### DPUse Rule Settings
+
+| Rule                                                     | Setting                                                                      | Why                                                                                         |
+| :------------------------------------------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| `sort-imports`                                           | Warn. Groups separated by a blank line are sorted separately, ignoring case. | Imports are grouped by where they come from.                                                |
+| `import-x/no-duplicates`                                 | Off                                                                          | A long import list is split into several one-line imports from the same module.             |
+| `@eslint-community/eslint-comments/require-description`  | Warn                                                                         | A comment that switches a rule off should say why.                                          |
+| `unicorn/consistent-boolean-name`                        | Also allows the subject first, such as `viewportIsWide`                      | DPUse names a boolean after its subject, then the verb.                                     |
+| `unicorn/consistent-class-member-order`                  | Private methods after public methods                                         | A private helper sits after the public methods that use it.                                 |
+| `unicorn/filename-case`                                  | camelCase or PascalCase                                                      | Vue components use PascalCase file names.                                                   |
+| `unicorn/no-asterisk-prefix-in-documentation-comments`   | Off                                                                          | VS Code adds the `*` prefix, and TypeScript drops it when reading the comment.              |
+| `unicorn/no-null`                                        | Off                                                                          | JSON uses `null`.                                                                           |
+| `unicorn/single-line-block-comment-style`                | Off                                                                          | A short block comment may stay on one line.                                                 |
+| `unicorn/switch-case-braces`                             | Warn, no braces                                                              | A `case` needs braces only when it declares a variable.                                     |
+| `unicorn/text-encoding-identifier-case`                  | `utf-8`, with the dash                                                       | `utf-8` is the standard name, used by `TextDecoder` and accepted by Node.js.                |
+| `@typescript-eslint/no-unused-vars`                      | Warn. Names starting with `_` are allowed.                                   | An underscore marks a value that exists only to be discarded.                               |
+| `@typescript-eslint/no-unsafe-class-instance-assignment` | Off                                                                          | In typescript-eslint 8.73.0 the rule overflows the stack on Vite and Rolldown plugin types. |
 
 <!-- DEPENDENCY_LICENSES_START -->
 
