@@ -3,8 +3,10 @@
 <!-- OPENING_START -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse?label=npm)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
 [![CI](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml/badge.svg)](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/codeql.yml/badge.svg)](https://github.com/dpuse/eslint-config-dpuse/security/code-scanning)
+![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdpuse%2Feslint-config-dpuse%2Fmain%2Fcode-health-reports%2Fvitest%2Fbadge.json)
+[![npm version](https://img.shields.io/npm/v/@dpuse/eslint-config-dpuse?label=npm)](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse)
 
 Common ESLint configuration used across DPUse projects.
 
@@ -136,11 +138,11 @@ This section is updated each time `npm run document` is run. Settings come from 
 
 ### Testing
 
-| Check                | Status | What it does                                                                                                                                                                                                                                                                                                  |
-| :------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Unit tests           | ✅ On  | [Vitest](https://vitest.dev) runs the unit tests. Part of the [CI workflow](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml) on every push and pull request to `main`.                                                                                                                  |
-| Property-based tests | ❌ Off | [fast-check](https://fast-check.dev) runs many random inputs per test to find edge cases, alongside the unit tests.                                                                                                                                                                                           |
-| Test coverage        | ✅ On  | ![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdpuse%2Feslint-config-dpuse%2Fmain%2Fcode-health-reports%2Fvitest%2Fbadge.json) [Vitest's V8 coverage](https://vitest.dev/guide/coverage) measures the share of source lines the unit tests run. The target is 80%. |
+| Check                | Status | What it does                                                                                                                                                                                 |
+| :------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unit tests           | ✅ On  | [Vitest](https://vitest.dev) runs the unit tests. Part of the [CI workflow](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/ci.yml) on every push and pull request to `main`. |
+| Property-based tests | ❌ Off | [fast-check](https://fast-check.dev) runs many random inputs per test to find edge cases, alongside the unit tests.                                                                          |
+| Test coverage        | ✅ On  | [Vitest's V8 coverage](https://vitest.dev/guide/coverage) measures the share of source lines the unit tests run.                                                                             |
 
 ### Code Quality
 
@@ -151,11 +153,11 @@ This section is updated each time `npm run document` is run. Settings come from 
 
 ### Security Analysis
 
-| Check           | Status | What it does                                                                                                                                                                                                                                                                                                                                                                     |
-| :-------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Push protection | ✅ On  | [GitHub push protection](https://docs.github.com/en/code-security/secret-scanning/push-protection-for-repositories-and-organizations) blocks pushes that contain credentials.                                                                                                                                                                                                    |
-| Static analysis | ✅ On  | [![CodeQL](https://github.com/dpuse/eslint-config-dpuse/actions/workflows/codeql.yml/badge.svg)](https://github.com/dpuse/eslint-config-dpuse/security/code-scanning) [CodeQL](https://codeql.github.com) scans GitHub Actions and JavaScript/TypeScript for security vulnerabilities, using the extended security queries, on every push and pull request to `main` and weekly. |
-| Secret scanning | ✅ On  | [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning) detects credentials, such as API keys and tokens, committed to the repository.                                                                                                                                                                                                                |
+| Check           | Status | What it does                                                                                                                                                                                               |
+| :-------------- | :----- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Push protection | ✅ On  | [GitHub push protection](https://docs.github.com/en/code-security/secret-scanning/push-protection-for-repositories-and-organizations) blocks pushes that contain credentials.                              |
+| Static analysis | ✅ On  | [CodeQL](https://codeql.github.com) scans GitHub Actions and JavaScript/TypeScript for security vulnerabilities, using the extended security queries, on every push and pull request to `main` and weekly. |
+| Secret scanning | ✅ On  | [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning) detects credentials, such as API keys and tokens, committed to the repository.                                          |
 
 ### Dependencies
 
@@ -183,7 +185,7 @@ Please do not open public GitHub issues for security vulnerabilities. Use [GitHu
 
 ## Contributing
 
-This repository is maintained solely by its owner and does not, at present, accept external contributions into the canonical repo. Its source is published openly under the MIT License — every DPUse project is fully open source except DPUse Engine, which remains closed and proprietary.
+This repository is maintained solely by its owner and does not, at present, accept external contributions. Its source is published openly under the MIT License — every DPUse project is fully open source except DPUse Engine and DPUse API, which remain closed and proprietary.
 
 For security vulnerabilities, see [Reporting Vulnerabilities](#reporting-vulnerabilities). For bugs, inconsistencies, or other feedback, [open a GitHub issue](https://github.com/dpuse/eslint-config-dpuse/issues) — feedback is read, but responses and fixes are at the maintainer's discretion.
 
