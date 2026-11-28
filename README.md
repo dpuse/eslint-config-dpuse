@@ -36,7 +36,7 @@ This [package](https://www.npmjs.com/package/@dpuse/eslint-config-dpuse) is avai
 npm install -D @dpuse/eslint-config-dpuse eslint
 ```
 
-_Requires [Node.js](https://nodejs.org/) 24 or later, [npm](https://www.npmjs.com/) 12 or later, and `eslint` 10.15.0 or later as a peer dependency._
+_Requires [Node.js](https://nodejs.org/) 24 or later, [npm](https://www.npmjs.com/) 12 or later, and `eslint` 10.16.0 or later as a peer dependency._
 
 > [!WARNING]
 > Built for DPUse projects and their conventions. You are welcome to use or adapt it, but it may change without notice to suit DPUse.
@@ -184,7 +184,7 @@ Please do not open public GitHub issues for security vulnerabilities. Use [GitHu
 
 ## Contributing
 
-This repository is maintained solely by its owner and does not, at present, accept external contributions. Its source is published openly under the MIT License — every DPUse project is fully open source except DPUse Engine and DPUse API, which remain closed and proprietary.
+This repository is maintained solely by its owner and does not, at present, accept external contributions.
 
 For security vulnerabilities, see [Reporting Vulnerabilities](#reporting-vulnerabilities). For bugs, inconsistencies, or other feedback, [open a GitHub issue](https://github.com/dpuse/eslint-config-dpuse/issues) — feedback is read, but responses and fixes are at the maintainer's discretion.
 
