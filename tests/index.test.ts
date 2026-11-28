@@ -46,20 +46,20 @@ describe('dpuseESLintConfig', () => {
     });
 
     it('applies project rules last, so they override the shared defaults', async () => {
-        const config = (await createESLint({ rules: { 'unicorn/no-null': 'error' } }).calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
-        expect(config.rules?.['unicorn/no-null']).toEqual([2, expect.anything()]);
+        const config = await createESLint({ rules: { 'unicorn/no-null': 'error' } }).calculateConfigForFile('src/conventions.ts');
+        expect(config?.rules?.['unicorn/no-null']).toEqual([2, expect.anything()]);
     });
 
     it('applies the DPUse overrides to files outside the TypeScript scope', async () => {
-        const config = (await eslint.calculateConfigForFile('scripts/tool.mjs')) as ESLint.ConfigData;
-        expect(config.rules?.['unicorn/no-null']).toEqual([0, expect.anything()]);
-        expect(config.rules?.['@typescript-eslint/no-unused-vars']).toBeUndefined();
+        const config = await eslint.calculateConfigForFile('scripts/tool.mjs');
+        expect(config?.rules?.['unicorn/no-null']).toEqual([0, expect.anything()]);
+        expect(config?.rules?.['@typescript-eslint/no-unused-vars']).toBeUndefined();
     });
 
     it("turns on ESLint's recommended rules without undoing the TypeScript ones", async () => {
-        const config = (await eslint.calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
-        expect(config.rules?.['no-debugger']).toEqual([2]);
-        expect(config.rules?.['no-undef']).toEqual([0, expect.anything()]); // TypeScript reports undefined names itself.
+        const config = await eslint.calculateConfigForFile('src/conventions.ts');
+        expect(config?.rules?.['no-debugger']).toEqual([2]);
+        expect(config?.rules?.['no-undef']).toEqual([0, expect.anything()]); // TypeScript reports undefined names itself.
     });
 
     it('lets plain JavaScript scripts use Node globals', async () => {
@@ -74,8 +74,9 @@ describe('dpuseESLintConfig', () => {
     it('applies no JavaScript rules to files in other languages', async () => {
         // A project linting CSS adds its own block for it; an empty one stands in, so ESLint treats the file as linted.
         const withCSS = new ESLint({ cwd: FIXTURE_DIRECTORY, overrideConfig: [...dpuseESLintConfig({}), { files: ['**/*.css'] }], overrideConfigFile: true });
-        const config = (await withCSS.calculateConfigForFile('src/styles.css')) as ESLint.ConfigData;
-        expect(Object.keys(config.rules ?? {})).toEqual([]);
+        const config = await withCSS.calculateConfigForFile('src/styles.css');
+        expect(config).toBeDefined();
+        expect(Object.keys(config?.rules ?? {})).toEqual([]);
     });
 
     it('ignores the standard build and report directories, plus any extra ignores', async () => {
@@ -87,8 +88,8 @@ describe('dpuseESLintConfig', () => {
     });
 
     it('passes core modules through to the import resolver', async () => {
-        const config = (await createESLint({ importCoreModules: ['cloudflare:workers'] }).calculateConfigForFile('src/conventions.ts')) as ESLint.ConfigData;
-        expect(config.settings?.['import-x/core-modules']).toEqual(['cloudflare:workers']);
+        const config = await createESLint({ importCoreModules: ['cloudflare:workers'] }).calculateConfigForFile('src/conventions.ts');
+        expect(config?.settings?.['import-x/core-modules']).toEqual(['cloudflare:workers']);
     });
 });
 
